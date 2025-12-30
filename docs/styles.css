@@ -79,10 +79,12 @@
 
 .hero {
   position: relative;
-  height: calc(100vh - var(--nav-height));
-  margin-top: var(--nav-height);
+  width: 100%;
+  height: calc(100vh - 64px); /* matches nav height */
+  margin-top: 64px;
   overflow: hidden;
 }
+
 
 
 
