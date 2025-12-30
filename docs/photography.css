@@ -9,36 +9,29 @@ body {
 /* PAGE WRAPPER */
 .photo-spread {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   padding: 6rem 3rem;
   background: #000;
 }
 
-/* COLLAGE */
+/* COLLAGE CANVAS */
 .photo-collage {
-  display: grid;
-  grid-template-columns: repeat(3, max-content);
-  column-gap: 4rem;
-  row-gap: 5rem;
-
+  position: relative;
   width: 55vw;
   max-width: 720px;
-
+  height: 600px; /* controls vertical cluster */
   margin-left: 4rem;
   margin-top: 4rem;
-
-  align-items: start;
 }
 
 /* RIGHT TEXT SPACE */
 .photo-text {
   width: 35%;
-  margin-top: 6rem;
+  margin-left: auto;
 }
 
 /* BASE ITEM */
 .photo-item {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -62,7 +55,7 @@ body {
   margin-top: 0.5rem;
   font-size: 0.7rem;
   letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.6);
   transition: color 0.2s ease;
 }
 
@@ -70,21 +63,49 @@ body {
   color: #fff;
 }
 
-/* SIZE VARIANTS */
+/* IMAGE SIZES */
 .small img { width: 150px; }
-.medium img { width: 200px; }
-.large img { width: 260px; }
-.tall img { width: 220px; }
+.medium img { width: 190px; }
+.large img { width: 230px; }
+.tall img { width: 200px; }
 
-/* SCATTERED OFFSETS (NO OVERLAP) */
-.item-1 { transform: translate(0, -10px); }
-.item-2 { transform: translate(-20px, 15px); }
-.item-3 { transform: translate(10px, 35px); }
+/* === EXACT CLUSTER POSITIONS === */
+/* tuned to match your screenshot */
 
-.item-4 { transform: translate(0, -30px); } /* anchor */
-.item-5 { transform: translate(25px, 20px); }
-.item-6 { transform: translate(-15px, 45px); }
-.item-7 { transform: translate(10px, 75px); }
+.item-1 { /* Scotland */
+  top: 0px;
+  left: 180px;
+}
+
+.item-2 { /* Untitled */
+  top: 40px;
+  left: 330px;
+}
+
+.item-3 { /* West New York */
+  top: 90px;
+  left: 470px;
+}
+
+.item-4 { /* Croatia */
+  top: 150px;
+  left: 110px;
+}
+
+.item-5 { /* Mexico */
+  top: 230px;
+  left: 260px;
+}
+
+.item-6 { /* Nice */
+  top: 300px;
+  left: 140px;
+}
+
+.item-7 { /* Barcelona */
+  top: 340px;
+  left: 300px;
+}
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -95,22 +116,22 @@ body {
 
   .photo-collage {
     width: 100%;
-    grid-template-columns: repeat(2, max-content);
-    column-gap: 2rem;
-    row-gap: 3rem;
+    height: auto;
     margin-left: 0;
+  }
+
+  .photo-item {
+    position: static;
+    margin-bottom: 3rem;
+  }
+
+  .photo-item img {
+    width: 100%;
   }
 
   .photo-text {
     width: 100%;
     margin-top: 4rem;
   }
-
-  .photo-item {
-    transform: none;
-  }
-
-  .photo-item img {
-    width: 100% !important;
-  }
 }
+
