@@ -1,37 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Miranda Isabella Ceron - Cinematographer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miranda Isabella Ceron</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<nav class="main-nav">
-  <div class="nav-left">
-    <a href="films.html" class="nav-link">Films</a>
-  </div>
+<!-- NAV -->
+<header class="top-nav">
+  <nav class="nav-inner">
 
-  <a href="index.html" class="nav-logo">
-    Miranda Isabella Ceron
-  </a>
+    <div class="nav-left">
+      <a href="#film">FILM</a>
+      <a href="#photography">PHOTOGRAPHY</a>
+    </div>
 
-  <div class="nav-right">
-    <a href="photography.html" class="nav-link">Photography</a>
-    <a href="about.html" class="nav-link">About</a>
-  </div>
-</nav>
+    <div class="nav-center">
+      <span class="name-top">Miranda</span>
+      <span class="name-bottom">Isabella Ceron</span>
+    </div>
 
+    <div class="nav-right">
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </div>
 
-
-<header class="hero">
-    <video autoplay muted loop playsinline class="reel">
-        <source src="assets/reel.mp4" type="video/mp4">
-    </video>
-
+  </nav>
 </header>
+
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="reel.mp4" type="video/mp4" />
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-text">
+    <h1>WE ARE BOLD STORYTELLERS.</h1>
+    <p>
+      A filmmaker and photographer creating narrative-driven work
+      focused on intimacy, observation, and visual truth.
+    </p>
+    <a href="#about" class="cta">ABOUT ME →</a>
+  </div>
+</section>
+
+<!-- FEATURED BAND -->
+<section class="featured">
+  <div class="featured-left">
+    <h2>Featured</h2>
+    <h3>Selected Works</h3>
+    <p>
+      A curated selection of films and photographic projects
+      exploring human stories and cinematic form.
+    </p>
+  </div>
+
+  <div class="featured-right">
+    <div class="card">
+      <div class="thumb"></div>
+      <h4>Project Title</h4>
+      <p>Short description goes here.</p>
+    </div>
+
+    <div class="card">
+      <div class="thumb"></div>
+      <h4>Project Title</h4>
+      <p>Short description goes here.</p>
+    </div>
+
+    <div class="card">
+      <div class="thumb"></div>
+      <h4>Project Title</h4>
+      <p>Short description goes here.</p>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+
 
 </body>
 </html>
