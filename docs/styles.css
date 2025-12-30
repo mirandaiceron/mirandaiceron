@@ -1,3 +1,8 @@
+:root {
+  --nav-height: 80px;
+}
+
+
 .main-nav {
   position: fixed;
   top: 0;
