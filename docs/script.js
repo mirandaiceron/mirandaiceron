@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroText = document.querySelector('.hero-text');
   const video = document.querySelector('.hero-video');
 
-  // Scroll effects
+  // ---------- SCROLL EFFECTS ----------
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
@@ -18,16 +18,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hero text animation
     if (heroText) {
-      heroText.style.transform = `translateY(${scrollY * 0.15}px)`;
-      heroText.style.opacity = `${1 - scrollY / 400}`;
+      heroText.style.transform = `translateY(${scrollY * 0.12}px)`;
+      heroText.style.opacity = `${1 - scrollY / 450}`;
     }
   });
 
-  // Video autoplay nudge
-  if (video) {
-    video.muted = true;
-    video.play().catch(() => {
-      // autoplay blocked — safe fallback
-    });
-  }
+  // ---------- SAFARI AUTOPLAY FIX ----------
+  if (!video) return;
+
+  video.muted = true;
+  video.setAttribute('muted', '');
+  video.playsInline = true;
+
+  const attemptPlay = () => {
+    video.play().catch(() => {});
+    window.removeEventListener('scroll', attemptPlay);
+    window.removeEventListener('mousemove', attemptPlay);
+    window.removeEventListener('touchstart', attemptPlay);
+  };
+
+  // Try immediately
+  attemptPlay();
+
+  // Safari desktop fallback: first interaction
+  window.addEventListener('scroll', attemptPlay, { once: true });
+  window.addEventListener('mousemove', attemptPlay, { once: true });
+  window.addEventListener('touchstart', attemptPlay, { once: true });
 });
+
