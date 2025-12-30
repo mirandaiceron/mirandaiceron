@@ -124,6 +124,7 @@ body {
   left: 6%;
   max-width: 480px;
   z-index: 2;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 }
 
 .hero-text h1 {
