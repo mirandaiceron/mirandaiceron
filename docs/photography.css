@@ -1,9 +1,10 @@
 body {
   margin: 0;
-  background: #f6f4ef; /* soft paper tone */
+  background: #000;
   font-family: 'Inter', sans-serif;
-  color: #111;
+  color: #fff;
 }
+
 
 .photo-spread {
   min-height: 100vh;
