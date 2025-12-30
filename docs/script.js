@@ -18,3 +18,12 @@ window.addEventListener('scroll', () => {
     heroText.style.opacity = `${1 - scrollY / 400}`;
   }
 });
+const video = document.querySelector('.hero-video');
+
+if (video) {
+  video.muted = true;
+  video.play().catch(() => {
+    // autoplay was blocked — browser fallback
+  });
+}
+
