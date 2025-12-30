@@ -24,14 +24,17 @@ body {
   width: 100%;
   z-index: 50;
 
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
+  box-shadow: none; /* ← IMPORTANT */
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 .top-nav.is-solid {
-  background: rgba(0, 0, 0, 0.95);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 }
+
+
 
 .nav-inner {
   max-width: 1400px;
