@@ -5,17 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
-    // Header background
-    if (header) {
-      scrollY > 80
-        ? header.classList.add('is-solid')
-        : header.classList.remove('is-solid');
+    /* HEADER: turn black after scroll */
+    if (scrollY > 80) {
+      header.classList.add('is-solid');
+    } else {
+      header.classList.remove('is-solid');
     }
 
-    // Hero text animation
+    /* HERO TEXT: fade + move */
     if (heroText) {
+      heroText.style.opacity = Math.max(1 - scrollY / 400, 0);
       heroText.style.transform = `translateY(${scrollY * 0.12}px)`;
-      heroText.style.opacity = `${1 - scrollY / 450}`;
     }
   });
 });
