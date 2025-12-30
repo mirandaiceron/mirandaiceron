@@ -46,5 +46,7 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
+
