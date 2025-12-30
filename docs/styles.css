@@ -75,10 +75,15 @@ body {
   gap: 1.5rem;
 }
 
-.nav-center {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
+/* FORCE NAME TO ALWAYS BE WHITE */
+.nav-center,
+.nav-center a,
+.nav-center a:visited,
+.nav-center a:hover {
+  color: #fff;
+  text-decoration: none;
 }
+
 
 /* Links */
 .nav-left a,
