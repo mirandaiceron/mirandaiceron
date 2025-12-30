@@ -14,28 +14,17 @@
 }
 
 .main-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 64px;                 /* SHORTER */
-  width: 100%;
-  padding: 0 4rem;
-
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-
-  background: rgba(120, 120, 120, 0.55); /* lighter gray */
-  backdrop-filter: blur(4px);            /* subtle polish */
-  z-index: 20;
+  background: rgba(140, 140, 140, 0.45);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 
-.nav-left,
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  justify-content: flex-end;
+  gap: 4rem; /* bigger gap = readable separation */
 }
 
 .nav-left {
@@ -51,13 +40,12 @@
 
 
 .nav-link {
-  color: white;
-  text-decoration: none;
   font-size: 0.75rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.22em; /* reduced from before */
   text-transform: uppercase;
   opacity: 0.75;
 }
+
 
 
 .nav-link:hover {
@@ -65,25 +53,16 @@
 }
 
 .nav-logo {
-  justify-self: center;
-  font-family: 'Playfair Display', serif;
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 500;
-  white-space: nowrap;
+  padding: 0 2.5rem; /* optical centering */
 }
 
 
 .hero {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 64px); /* matches nav height */
   margin-top: 64px;
+  height: calc(100vh - 64px);
   overflow: hidden;
 }
+
 
 
 
