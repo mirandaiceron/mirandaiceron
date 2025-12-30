@@ -15,10 +15,12 @@ body {
 
 .photo-collage {
   position: relative;
-  width: 720px;     /* narrower = more left */
-  height: 620px;
-  margin-left: 2rem; /* nudges left without touching header */
+  width: 900px;
+  height: 520px;
+  margin-left: 6rem;
+  margin-top: 2rem;
 }
+
 
 
 
@@ -61,41 +63,42 @@ body {
 /* LEFT COLUMN (tight vertical rhythm) */
 /* LEFT COLUMN */
 .item-1 {
-  width: 160px;
-  top: 20px;
+  width: 180px;
+  top: 0;
   left: 0;
 }
 
 .item-2 {
-  width: 200px;
-  top: 190px;
-  left: -40px;
+  width: 220px;
+  top: 180px;
+  left: 0;
 }
 
 .item-3 {
-  width: 150px;
-  top: 400px;
-  left: 20px;
+  width: 180px;
+  top: 380px;
+  left: 0;
 }
 
-/* RIGHT CLUSTER */
+/* RIGHT COLUMN */
 .item-4 {
-  width: 190px;
-  top: 60px;
-  left: 300px;
+  width: 260px;
+  top: 40px;
+  left: 360px;
 }
 
 .item-5 {
-  width: 230px;
-  top: 240px;
-  left: 340px;
+  width: 220px;
+  top: 260px;
+  left: 420px;
 }
 
 .item-6 {
-  width: 160px;
-  top: 460px;
-  left: 300px;
+  width: 200px;
+  top: 420px;
+  left: 360px;
 }
+
 
 
 
