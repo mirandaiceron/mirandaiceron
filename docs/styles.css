@@ -45,8 +45,12 @@
 }
 
 .hero {
-  margin-top: 70px;
+  position: relative;
+  height: calc(100vh - var(--nav-height));
+  margin-top: var(--nav-height);
+  overflow: hidden;
 }
+
 
 
 
