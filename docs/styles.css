@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 64px;
+  height: var(--nav-height);
   width: 100%;
   padding: 0 4rem;
 
@@ -16,6 +16,7 @@
 
   z-index: 20;
 }
+
 
 .nav-left,
 .nav-right {
@@ -59,14 +60,15 @@
 }
 
 :root {
-  --nav-height: 80px;
+  --nav-height: 64px;
 }
 
 .hero {
-  margin-top: 64px;
-  height: calc(100vh - 64px);
+  margin-top: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
   overflow: hidden;
 }
+
 
 .reel {
   width: 100%;
