@@ -6,14 +6,19 @@
 .main-nav {
   position: fixed;
   top: 0;
+  left: 0;
+  height: var(--nav-height);
   width: 100%;
-  padding: 1.2rem 3rem;
+  padding: 0 3rem;
+
   display: grid;
   grid-template-columns: 1fr auto 1fr 1fr;
   align-items: center;
-  background: rgba(0, 0, 0, 0.6);
+
+  background: rgba(0, 0, 0, 0.55);
   z-index: 20;
 }
+
 
 .nav-link {
   color: white;
