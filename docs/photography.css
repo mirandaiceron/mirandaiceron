@@ -6,31 +6,47 @@ body {
 }
 /* PAGE WRAPPER */
 .photo-spread {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 6rem 3rem;
-  background: #000;
 }
+
+.photo-text {
+  width: 35%;
+  margin-top: 6rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+}
+
 
 /* COLLAGE CANVAS */
 .photo-collage {
   display: grid;
-  grid-template-columns: 260px 260px 260px; /* fixed columns */
-  column-gap: 3.5rem;
-  row-gap: 4rem;
+  grid-template-columns: repeat(3, max-content);
+  column-gap: 4rem;
+  row-gap: 5rem;
 
-  max-width: 900px;
+  width: 55vw;          /* LEFT BIAS */
+  max-width: 700px;
+
   margin-left: 4rem;
-  margin-top: 4rem;
+  margin-top: 5rem;
 
   align-items: start;
 }
 
-.item-1 { transform: translateY(-10px); }
-.item-2 { transform: translateX(-10px); }
-.item-3 { transform: translateY(15px); }
 
-.item-4 { transform: translateY(-20px); } /* NICE anchor */
-.item-5 { transform: translateX(10px); }
-.item-6 { transform: translateY(20px); }
+.item-1 { transform: translate(0, -10px); }
+.item-2 { transform: translate(-20px, 10px); }
+.item-3 { transform: translate(10px, 30px); }
+
+.item-4 { transform: translate(0, -30px); } /* anchor */
+.item-5 { transform: translate(25px, 15px); }
+.item-6 { transform: translate(-15px, 40px); }
+.item-7 { transform: translate(10px, 70px); } /* NEW */
+
 
 
 /* BASE ITEM */
@@ -44,9 +60,13 @@ body {
 
 .photo-item img {
   display: block;
-  width: 100%;
   height: auto;
 }
+
+.small img { width: 150px; }
+.medium img { width: 200px; }
+.large img { width: 260px; }
+.tall img { width: 220px; }
 
 .photo-label {
   margin-top: 0.5rem;
@@ -62,25 +82,26 @@ body {
 
 
 
-.item-1 img { width: 180px; }
-.item-2 img { width: 210px; }
-.item-3 img { width: 170px; }
-
-.item-4 img { width: 260px; } /* NICE = largest */
-.item-5 img { width: 220px; }
-.item-6 img { width: 160px; }
-
-
-
 
 /* MOBILE */
 @media (max-width: 768px) {
+  .photo-spread {
+    flex-direction: column;
+  }
+
   .photo-collage {
-    grid-template-columns: 1fr;
+    width: 100%;
+    grid-template-columns: repeat(2, max-content);
     margin-left: 0;
   }
 
+  .photo-text {
+    width: 100%;
+    margin-top: 4rem;
+  }
+
   .photo-item {
-    transform: none !important;
+    transform: none;
   }
 }
+
