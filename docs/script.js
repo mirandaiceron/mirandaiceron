@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroText = document.querySelector('.hero-text');
   const video = document.querySelector('.hero-video');
 
-  // ---------- SCROLL EFFECTS ----------
+  /* =========================
+     SCROLL EFFECTS
+  ========================= */
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
@@ -23,26 +25,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ---------- SAFARI AUTOPLAY FIX ----------
+  /* =========================
+     VIDEO AUTOPLAY (SAFARI SAFE)
+  ========================= */
   if (!video) return;
 
   video.muted = true;
   video.setAttribute('muted', '');
   video.playsInline = true;
 
-  const attemptPlay = () => {
-    video.play().catch(() => {});
-    window.removeEventListener('scroll', attemptPlay);
-    window.removeEventListener('mousemove', attemptPlay);
-    window.removeEventListener('touchstart', attemptPlay);
+  let hasPlayed = false;
+
+  const playVideo = () => {
+    if (hasPlayed) return;
+
+    video.play()
+      .then(() => {
+        hasPlayed = true;
+      })
+      .catch(() => {
+        // Safari may still block until gesture
+      });
   };
 
-  // Try immediately
-  attemptPlay();
+  // Try immediately (works on Chrome / Firefox / iOS Safari)
+  playVideo();
 
-  // Safari desktop fallback: first interaction
-  window.addEventListener('scroll', attemptPlay, { once: true });
-  window.addEventListener('mousemove', attemptPlay, { once: true });
-  window.addEventListener('touchstart', attemptPlay, { once: true });
-});
+  // Safari desktop fallback:
+
 
