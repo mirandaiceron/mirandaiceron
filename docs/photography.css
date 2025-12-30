@@ -40,12 +40,12 @@ body {
 
 .photo-label {
   display: block;
-  margin-top: 0.5rem;
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.7);
 }
+
 .photo-item:hover .photo-label {
   color: #fff;
 }
@@ -104,22 +104,16 @@ body {
 
 /* MOBILE FALLBACK — stack cleanly */
 @media (max-width: 768px) {
-  .photo-spread {
-    padding: 4rem 1.5rem;
-  }
-
   .photo-collage {
     width: 100%;
     height: auto;
+    margin-left: 0;
   }
 
   .photo-item {
     position: relative;
     margin-bottom: 2.5rem;
   }
-
-  .photo-item img {
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
-  }
 }
+
 
