@@ -7,19 +7,17 @@ body {
 
 /* PAGE WRAPPER — centers everything */
 .photo-spread {
-  min-height: 100vh;
+  padding: 6rem 3rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6rem 2rem;
+  justify-content: flex-start; /* LEFT align */
 }
 
-/* COLLAGE CANVAS */
 .photo-collage {
   position: relative;
-  width: 1000px;
-  height: 700px;
+  width: 820px;     /* tighter canvas */
+  height: 620px;
 }
+
 
 /* IMAGE BASE */
 .photo-item {
@@ -37,57 +35,64 @@ body {
 
 .photo-label {
   display: block;
-  margin-top: 0.6rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+  margin-top: 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255,255,255,0.7);
+}
+.photo-item:hover .photo-label {
+  color: #fff;
 }
 
 
-/* Subtle lift on hover */
-.photo-item:hover {
-  transform: translateY(-4px);
-  z-index: 10;
+
+/* IMAGE BASE */
+.photo-item {
+  position: absolute;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* LEFT COLUMN */
+/* LEFT COLUMN (tight vertical rhythm) */
 .item-1 {
   width: 160px;
   top: 40px;
-  left: 80px;
+  left: 40px;
 }
 
 .item-2 {
   width: 200px;
-  top: 220px;
-  left: 40px;
+  top: 210px;
+  left: 0;
 }
 
 .item-3 {
   width: 150px;
-  top: 460px;
-  left: 120px;
+  top: 420px;
+  left: 60px;
 }
 
-/* RIGHT COLUMN */
+/* RIGHT CLUSTER (closer + overlapping feel) */
 .item-4 {
-  width: 180px;
-  top: 80px;
-  left: 520px;
+  width: 190px;
+  top: 90px;
+  left: 360px;
 }
 
 .item-5 {
-  width: 220px;
-  top: 300px;
-  left: 600px;
+  width: 230px;
+  top: 260px;
+  left: 420px;
 }
 
 .item-6 {
   width: 160px;
-  top: 520px;
-  left: 500px;
+  top: 470px;
+  left: 360px;
 }
+
 
 /* MOBILE FALLBACK — stack cleanly */
 @media (max-width: 768px) {
