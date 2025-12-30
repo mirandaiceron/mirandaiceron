@@ -30,7 +30,6 @@ body {
   width: 100%;
   z-index: 50;
   background: transparent;
-  box-shadow: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -69,7 +68,7 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-/* Nav links */
+/* Links */
 .nav-left a,
 .nav-right a {
   font-size: 0.7rem;
@@ -97,7 +96,6 @@ body {
   background: #000;
 }
 
-/* Video containment */
 .video-wrapper {
   position: absolute;
   inset: 0;
@@ -110,35 +108,12 @@ body {
   object-fit: cover;
 }
 
-/* Hide Safari default play icon */
-.hero-video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-}
-
-/* Make hero opaque */
+/* Darken reel for readability */
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.85);
-}
-
-/* Custom play overlay */
-.play-overlay {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.play-overlay span {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 0.75rem 1.4rem;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
 /* Hero text */
@@ -147,7 +122,7 @@ body {
   bottom: 20%;
   left: 6%;
   max-width: 480px;
-  z-index: 3;
+  z-index: 2;
 }
 
 .hero-text h1 {
@@ -162,7 +137,7 @@ body {
 }
 
 /* =========================
-   FEATURED / SELECTED WORKS
+   FEATURED
 ========================= */
 .featured {
   display: grid;
@@ -212,11 +187,10 @@ body {
 }
 
 /* =========================
-   MOBILE (≤ 768px)
+   MOBILE
 ========================= */
 @media (max-width: 768px) {
 
-  /* NAV */
   .nav-inner {
     display: flex;
     flex-direction: column;
@@ -227,7 +201,6 @@ body {
 
   .nav-center {
     order: -1;
-    margin-bottom: 0.25rem;
   }
 
   .nav-left,
@@ -243,7 +216,6 @@ body {
     font-size: 1.1rem;
   }
 
-  /* HERO */
   .hero {
     height: auto;
     padding: 6rem 1.5rem 4rem;
@@ -270,7 +242,6 @@ body {
     font-size: 0.95rem;
   }
 
-  /* FEATURED */
   .featured {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -285,4 +256,5 @@ body {
     height: 200px;
   }
 }
+
 
