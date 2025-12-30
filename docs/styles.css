@@ -239,6 +239,43 @@ body {
     font-size: 0.95rem;
   }
 
+  .video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hide default big Safari play icon */
+.hero-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+/* Custom play overlay */
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.play-overlay span {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0.75rem 1.4rem;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+/* Hide overlay once video plays */
+.hero-video:not([paused]) + .play-overlay {
+  display: none;
+}
+
+
   /* FEATURED */
   .featured {
     grid-template-columns: 1fr;
