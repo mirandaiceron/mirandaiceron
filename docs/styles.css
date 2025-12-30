@@ -17,9 +17,7 @@ body {
   padding-top: var(--header-height);
 }
 
-/* =========================
-   NAV
-========================= */
+/* NAV */
 .top-nav {
   position: fixed;
   top: 0;
@@ -62,7 +60,6 @@ body {
 .nav-center {
   text-align: center;
   font-family: 'Playfair Display', serif;
-  line-height: 1.1;
 }
 
 .name-top,
@@ -72,9 +69,7 @@ body {
   font-weight: 700;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero {
   position: relative;
   height: calc(100vh - var(--header-height));
@@ -90,7 +85,7 @@ body {
   object-fit: cover;
 }
 
-/* Remove Safari UI */
+/* remove Safari UI */
 .hero-video::-webkit-media-controls,
 .hero-video::-webkit-media-controls-start-playback-button {
   display: none !important;
@@ -122,12 +117,54 @@ body {
   line-height: 1.6;
 }
 
-/* =========================
-   FEATURED
-========================= */
+/* FEATURED */
 .featured {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
   padding: 5rem 3rem;
 }
+
+.featured-left h2 {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.featured-left h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.featured-left p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* CARDS */
+.featured-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card .thumb {
+  background: #222;
+  height: 140px;
+  margin-bottom: 0.75rem;
+}
+
+.card h4 {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.card p {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
 
 
 
