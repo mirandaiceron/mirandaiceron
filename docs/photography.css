@@ -9,14 +9,17 @@ body {
 .photo-spread {
   padding: 6rem 3rem;
   display: flex;
-  justify-content: flex-start; /* LEFT align */
+  justify-content: flex-start;
 }
+
 
 .photo-collage {
   position: relative;
-  width: 820px;     /* tighter canvas */
+  width: 720px;     /* narrower = more left */
   height: 620px;
+  margin-left: 2rem; /* nudges left without touching header */
 }
+
 
 
 /* IMAGE BASE */
@@ -56,42 +59,44 @@ body {
 }
 
 /* LEFT COLUMN (tight vertical rhythm) */
+/* LEFT COLUMN */
 .item-1 {
   width: 160px;
-  top: 40px;
-  left: 40px;
+  top: 20px;
+  left: 0;
 }
 
 .item-2 {
   width: 200px;
-  top: 210px;
-  left: 0;
+  top: 190px;
+  left: -40px;
 }
 
 .item-3 {
   width: 150px;
-  top: 420px;
-  left: 60px;
+  top: 400px;
+  left: 20px;
 }
 
-/* RIGHT CLUSTER (closer + overlapping feel) */
+/* RIGHT CLUSTER */
 .item-4 {
   width: 190px;
-  top: 90px;
-  left: 360px;
+  top: 60px;
+  left: 300px;
 }
 
 .item-5 {
   width: 230px;
-  top: 260px;
-  left: 420px;
+  top: 240px;
+  left: 340px;
 }
 
 .item-6 {
   width: 160px;
-  top: 470px;
-  left: 360px;
+  top: 460px;
+  left: 300px;
 }
+
 
 
 /* MOBILE FALLBACK — stack cleanly */
