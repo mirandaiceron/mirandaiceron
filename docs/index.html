@@ -32,17 +32,18 @@
   </nav>
 </header>
 
-<div class="video-wrapper">
-  <video class="hero-video" controls playsinline preload="metadata">
-    <source src="./assets/reel.mp4" type="video/mp4">
-  </video>
+<!-- ✅ HERO MUST BE FIRST -->
+<section class="hero">
 
-  <div class="play-overlay">
-    <span>PLAY</span>
+  <div class="video-wrapper">
+    <video class="hero-video" controls playsinline preload="metadata">
+      <source src="./assets/reel.mp4" type="video/mp4">
+    </video>
+
+    <div class="play-overlay">
+      <span>PLAY</span>
+    </div>
   </div>
-</div>
-
-
 
   <div class="hero-overlay"></div>
 
@@ -53,9 +54,12 @@
       focused on intimacy, observation, and visual truth.
     </p>
   </div>
+
 </section>
 
-<section class="featured" id="film">
+<!-- ✅ FEATURED COMES AFTER -->
+<section class="featured">
+
   <div class="featured-left">
     <h2>Featured</h2>
     <h3>Selected Works</h3>
@@ -84,8 +88,9 @@
       <p>Short description goes here.</p>
     </div>
   </div>
+
 </section>
 
-<script src="./script.js"></script>
 </body>
+
 </html>
