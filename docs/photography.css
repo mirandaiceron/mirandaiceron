@@ -4,42 +4,34 @@ body {
   font-family: 'Inter', sans-serif;
   color: #fff;
 }
-/* PAGE WRAP */
+/* PAGE WRAPPER */
 .photo-spread {
   padding: 6rem 3rem;
   background: #000;
 }
 
-/* COLLAGE GRID */
+/* COLLAGE CANVAS */
 .photo-collage {
   display: grid;
-  grid-template-columns: repeat(3, 220px);
+  grid-template-columns: 160px 200px 160px;
   grid-auto-rows: auto;
   column-gap: 3rem;
-  row-gap: 4rem;
+  row-gap: 3.5rem;
 
-  /* pushes collage left like reference */
-  margin-left: 6rem;
-  margin-top: 3rem;
+  /* pushes collage left */
+  margin-left: 4rem;
+  margin-top: 2rem;
 }
 
-/* IMAGE ITEM */
+/* BASE ITEM */
 .photo-item {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.25s ease;
 }
 
-/* STAGGERING (this replaces absolute positioning) */
-.photo-item:nth-child(1) { margin-top: 0; }
-.photo-item:nth-child(2) { margin-top: 3rem; }
-.photo-item:nth-child(3) { margin-top: 6rem; }
-
-.photo-item:nth-child(4) { margin-top: 1rem; }
-.photo-item:nth-child(5) { margin-top: 5rem; }
-.photo-item:nth-child(6) { margin-top: 9rem; }
-
-/* IMAGE */
+/* IMAGES */
 .photo-item img {
   width: 100%;
   display: block;
@@ -50,14 +42,40 @@ body {
   display: block;
   margin-top: 0.6rem;
   font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.7;
+  transition: color 0.25s ease;
 }
 
-/* HOVER (subtle, editorial) */
-.photo-item:hover img {
-  opacity: 0.9;
+/* HOVER LABEL BRIGHTEN */
+.photo-item:hover .photo-label {
+  color: #fff;
+}
+
+/* ---- COLLAGE SCATTER (NO OVERLAP) ---- */
+
+/* Column 1 */
+.photo-item:nth-child(1) {
+  transform: translateY(0px);
+}
+.photo-item:nth-child(2) {
+  transform: translateY(40px);
+}
+.photo-item:nth-child(3) {
+  transform: translateY(90px);
+}
+
+/* Column 2 */
+.photo-item:nth-child(4) {
+  transform: translateY(20px);
+}
+.photo-item:nth-child(5) {
+  transform: translateY(80px);
+}
+
+/* Column 3 */
+.photo-item:nth-child(6) {
+  transform: translateY(140px);
 }
 
 /* MOBILE */
@@ -68,6 +86,6 @@ body {
   }
 
   .photo-item {
-    margin-top: 0 !important;
+    transform: none !important;
   }
 }
