@@ -111,11 +111,9 @@ body {
 
 /* Darken reel for readability */
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.35);
 }
+
 
 /* Hero text */
 .hero-text {
