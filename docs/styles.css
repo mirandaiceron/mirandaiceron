@@ -5,27 +5,45 @@
 
   /* NAV: stack instead of grid */
   .nav-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem 1.5rem;
-  }
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem 3rem;
 
-  .nav-left,
-  .nav-right {
-    justify-content: center;
-    gap: 1.2rem;
-  }
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+}
 
-  .nav-center {
-    order: -1;
-    margin-bottom: 0.25rem;
-  }
+/* LEFT + RIGHT LINKS */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+}
 
-  .name-top,
-  .name-bottom {
-    font-size: 1.1rem;
-  }
+.nav-left {
+  justify-content: flex-start;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+/* CENTER NAME */
+.nav-center {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.15;
+}
+
+.name-top,
+.name-bottom {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 
   /* HERO: text becomes relative, not absolute */
   .hero {
