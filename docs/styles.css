@@ -94,6 +94,7 @@ body {
   position: relative;
   height: calc(100vh - var(--header-height));
   overflow: hidden;
+  background: #000;
 }
 
 /* Video containment */
@@ -114,12 +115,9 @@ body {
   display: none !important;
 }
 
-/* Overlay */
+/* Make hero opaque */
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.85);
 }
 
 /* Custom play overlay */
