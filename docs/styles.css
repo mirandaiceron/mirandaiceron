@@ -93,33 +93,33 @@ body {
 .hero {
   position: relative;
   height: calc(100vh - var(--header-height));
-  background: #000;
   overflow: hidden;
 }
 
+/* Video containment */
 .video-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 .hero-video {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Hide default Safari play icon */
+/* Hide Safari default play icon */
 .hero-video::-webkit-media-controls-start-playback-button {
   display: none !important;
 }
 
+/* Overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 /* Custom play overlay */
@@ -129,6 +129,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -142,18 +143,13 @@ body {
   backdrop-filter: blur(6px);
 }
 
-/* Hide overlay when video plays */
-.hero-video:playing + .play-overlay {
-  display: none;
-}
-
+/* Hero text */
 .hero-text {
   position: absolute;
   bottom: 20%;
   left: 6%;
   max-width: 480px;
-  z-index: 2;
-  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  z-index: 3;
 }
 
 .hero-text h1 {
@@ -255,15 +251,15 @@ body {
     padding: 6rem 1.5rem 4rem;
   }
 
-  .hero-video {
+  .video-wrapper {
     position: relative;
     height: 60vh;
   }
 
   .hero-text {
     position: relative;
-    bottom: auto;
     left: auto;
+    bottom: auto;
     max-width: 100%;
     margin-top: 2rem;
   }
@@ -291,3 +287,4 @@ body {
     height: 200px;
   }
 }
+
