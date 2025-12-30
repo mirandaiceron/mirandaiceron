@@ -9,13 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
-    // Header fade to solid
+    // Header fade
     if (header) {
-      if (scrollY > 80) {
-        header.classList.add('is-solid');
-      } else {
-        header.classList.remove('is-solid');
-      }
+      scrollY > 80
+        ? header.classList.add('is-solid')
+        : header.classList.remove('is-solid');
     }
 
     // Hero text animation
@@ -26,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* =========================
-     VIDEO AUTOPLAY (SAFARI SAFE)
+     VIDEO STARTS ON FIRST SCROLL
   ========================= */
   if (!video) return;
 
@@ -34,23 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
   video.setAttribute('muted', '');
   video.playsInline = true;
 
-  let hasPlayed = false;
+  let started = false;
 
-  const playVideo = () => {
-    if (hasPlayed) return;
-
-    video.play()
-      .then(() => {
-        hasPlayed = true;
-      })
-      .catch(() => {
-        // Safari may still block until gesture
-      });
+  const startVideo = () => {
+    if (started) return;
+    video.play().then(() => {
+      started = true;
+    }).catch(() => {});
   };
 
-  // Try immediately (works on Chrome / Firefox / iOS Safari)
-  playVideo();
-
-  // Safari desktop fallback:
-
+  // FIRST SCROLL = PLAY
+  window.addEventListener('scroll', startVideo, { once: true });
+});
 
