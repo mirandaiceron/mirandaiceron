@@ -13,26 +13,31 @@ body {
 /* COLLAGE CANVAS */
 .photo-collage {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem 4rem;
+  grid-template-columns: 260px 260px 260px; /* fixed columns */
+  column-gap: 3.5rem;
+  row-gap: 4rem;
+
   max-width: 900px;
-  margin-left: 6rem;
-  margin-top: 6rem;
-  position: relative;
+  margin-left: 4rem;
+  margin-top: 4rem;
+
+  align-items: start;
 }
 
-.item-1 { transform: translateY(-20px); }
-.item-2 { transform: translateX(-30px); }
-.item-3 { transform: translateY(30px); }
+.item-1 { transform: translateY(-10px); }
+.item-2 { transform: translateX(-10px); }
+.item-3 { transform: translateY(15px); }
 
-.item-4 { transform: translateY(-40px); } /* NICE anchor */
-.item-5 { transform: translateX(20px); }
-.item-6 { transform: translateY(40px); }
+.item-4 { transform: translateY(-20px); } /* NICE anchor */
+.item-5 { transform: translateX(10px); }
+.item-6 { transform: translateY(20px); }
 
 
 /* BASE ITEM */
 .photo-item {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keeps editorial feel */
   text-decoration: none;
 }
 
@@ -56,6 +61,7 @@ body {
 }
 
 
+
 .item-1 img { width: 180px; }
 .item-2 img { width: 210px; }
 .item-3 img { width: 170px; }
@@ -63,6 +69,7 @@ body {
 .item-4 img { width: 260px; } /* NICE = largest */
 .item-5 img { width: 220px; }
 .item-6 img { width: 160px; }
+
 
 
 
