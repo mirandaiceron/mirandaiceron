@@ -4,94 +4,70 @@ body {
   font-family: 'Inter', sans-serif;
   color: #fff;
 }
-
 /* PAGE WRAP */
 .photo-spread {
   padding: 6rem 3rem;
+  background: #000;
 }
 
-/* COLLAGE AREA */
+/* COLLAGE GRID */
 .photo-collage {
-  position: relative;
-  width: 820px;          /* tighter */
-  height: 620px;
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  grid-auto-rows: auto;
+  column-gap: 3rem;
+  row-gap: 4rem;
+
+  /* pushes collage left like reference */
+  margin-left: 6rem;
+  margin-top: 3rem;
 }
 
-/* BASE ITEM */
+/* IMAGE ITEM */
 .photo-item {
-  position: absolute;
+  display: block;
   text-decoration: none;
   color: #fff;
 }
 
+/* STAGGERING (this replaces absolute positioning) */
+.photo-item:nth-child(1) { margin-top: 0; }
+.photo-item:nth-child(2) { margin-top: 3rem; }
+.photo-item:nth-child(3) { margin-top: 6rem; }
+
+.photo-item:nth-child(4) { margin-top: 1rem; }
+.photo-item:nth-child(5) { margin-top: 5rem; }
+.photo-item:nth-child(6) { margin-top: 9rem; }
+
+/* IMAGE */
 .photo-item img {
-  display: block;
   width: 100%;
+  display: block;
 }
 
 /* LABEL */
 .photo-label {
   display: block;
-  margin-top: 0.4rem;
+  margin-top: 0.6rem;
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
-/* LEFT COLUMN (stacked) */
-.item-1 {
-  width: 170px;
-  top: 0;
-  left: 0;
+/* HOVER (subtle, editorial) */
+.photo-item:hover img {
+  opacity: 0.9;
 }
 
-.item-2 {
-  width: 200px;
-  top: 200px;
-  left: 0;
-}
-
-.item-3 {
-  width: 180px;
-  top: 430px;
-  left: 0;
-}
-
-/* RIGHT COLUMN (no overlap) */
-.item-4 {
-  width: 240px;
-  top: 60px;
-  left: 300px;
-}
-
-.item-5 {
-  width: 260px;
-  top: 310px;
-  left: 300px;
-}
-
-.item-6 {
-  width: 200px;
-  top: 560px;
-  left: 300px;
-}
-
-/* MOBILE: simple stack */
+/* MOBILE */
 @media (max-width: 768px) {
   .photo-collage {
-    width: 100%;
-    height: auto;
+    grid-template-columns: 1fr;
+    margin-left: 0;
   }
 
   .photo-item {
-    position: relative;
-    margin-bottom: 2.5rem;
-    left: auto;
-    top: auto;
+    margin-top: 0 !important;
   }
 }
-
-
-
-
