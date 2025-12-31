@@ -35,7 +35,7 @@ body {
   position: absolute;
   top: 50%;
   left: 40px;
-  transform: translateY(-50%) translateY(20px);
+  transform: translateY(-50%) translateY(10px);
 
   font-family: 'Inter', sans-serif;
   font-size: 0.65rem;
