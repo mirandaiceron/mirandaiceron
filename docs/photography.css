@@ -82,7 +82,7 @@ body {
 .item-2 img { width: 240px; } /* Barcelona */
 .item-3 img { width: 200px; } /* Croatia */
 .item-4 img { width: 200px; } /* Nice */
-.item-5 img { width: 240px; } /* Scotland */
+.item-5 img { width: 215px; } /* Scotland */
 .item-6 img { width: 240px; } /* West New York */
 .item-7 img { width: 200px; } /* Untitled */
 
@@ -106,7 +106,7 @@ body {
 }
 
 /* CLUSTER POSITIONS */
-.item-1 { top: 400px; left: 280px; }
+.item-1 { top: 400px; left: 250px; }
 .item-2 { top: 580px; left: 410px; }
 .item-3 { top: 180px; left: 50px; }
 .item-4 { top: 370px; left: 0px; }
