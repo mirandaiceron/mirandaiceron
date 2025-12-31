@@ -19,7 +19,6 @@ body {
   z-index: 1;
 }
 
-
 /* PAGE WRAPPER */
 .photo-spread {
   display: flex;
@@ -50,6 +49,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   text-decoration: none;
+  z-index: 2; /* ensures images sit above grid */
 }
 
 /* IMAGE */
@@ -148,4 +148,3 @@ body {
     margin-top: 4rem;
   }
 }
-
