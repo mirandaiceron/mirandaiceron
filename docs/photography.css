@@ -30,24 +30,24 @@ body {
   position: relative;
 }
 
-/* RIGHT-SIDE DESCRIPTION — MATCH NAV + CAPTIONS */
+/* RIGHT-SIDE DESCRIPTION — BOOK-LIKE PLACEMENT */
 .photo-description {
   position: absolute;
-  bottom: 120px;
+  top: 50%;                 /* anchor to center */
   left: 40px;
+  transform: translateY(40px); /* push slightly below center */
 
   font-family: 'Inter', sans-serif;
-  font-size: 0.65rem;          /* slightly smaller than labels */
+  font-size: 0.65rem;
   font-weight: 400;
-  letter-spacing: 0.14em;      /* matches photo labels */
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 
   line-height: 1.6;
   color: rgba(255,255,255,0.55);
 
-  max-width: 260px;
+  max-width: 280px;
 }
-
 
 /* PHOTO ITEM */
 .photo-item {
