@@ -21,37 +21,6 @@ body {
   height: 600px;
   margin-left: 4rem;
   margin-top: calc(4rem - 80px);
-
-}
-
-/* === DEV GRID + PIXEL NUMBERS (TEMPORARY) === */
-.photo-collage::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px),
-    url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='720' height='600'>\
-<style>text{font:10px Inter, sans-serif; fill:rgba(255,255,255,0.6);}</style>\
-<g>\
-<text x='0' y='12'>0</text><text x='50' y='12'>50</text><text x='100' y='12'>100</text>\
-<text x='150' y='12'>150</text><text x='200' y='12'>200</text><text x='250' y='12'>250</text>\
-<text x='300' y='12'>300</text><text x='350' y='12'>350</text><text x='400' y='12'>400</text>\
-<text x='450' y='12'>450</text><text x='500' y='12'>500</text><text x='550' y='12'>550</text>\
-<text x='600' y='12'>600</text><text x='650' y='12'>650</text><text x='700' y='12'>700</text>\
-</g>\
-<g>\
-<text x='2' y='50'>50</text><text x='2' y='100'>100</text><text x='2' y='150'>150</text>\
-<text x='2' y='200'>200</text><text x='2' y='250'>250</text><text x='2' y='300'>300</text>\
-<text x='2' y='350'>350</text><text x='2' y='400'>400</text><text x='2' y='450'>450</text>\
-<text x='2' y='500'>500</text><text x='2' y='550'>550</text>\
-</g>\
-</svg>");
-  background-size: 50px 50px, 50px 50px, cover;
-  pointer-events: none;
-  z-index: 1;
 }
 
 /* RIGHT TEXT SPACE */
@@ -70,9 +39,9 @@ body {
   z-index: 2;
 }
 
-/* IMAGE — UNIFIED SIZE */
+/* IMAGE — BASE SIZE */
 .photo-item img {
-  width: 200px;          /* ALL IMAGES SAME SIZE */
+  width: 200px;
   height: auto;
   display: block;
   transition: transform 0.35s ease, opacity 0.35s ease;
@@ -86,7 +55,6 @@ body {
 .item-5 img { width: 150px; } /* Scotland */
 .item-6 img { width: 180px; } /* West New York */
 .item-7 img { width: 150px; } /* Untitled */
-
 
 .photo-item:hover img {
   transform: scale(1.02);
@@ -109,11 +77,12 @@ body {
 /* CLUSTER POSITIONS */
 .item-1 { top: 320px; left: 250px; }
 .item-2 { top: 450px; left: 380px; }
-.item-3 { top: 145px; left: 0px; }
+.item-3 { top: 150px; left: 0px; }
 .item-4 { top: 300px; left: 50px; }
 .item-5 { top: 0px; left: 100px; }
 .item-6 { top: 200px; left: 460px; }
 .item-7 { top: 50px; left: 285px; }
+
 /* MOBILE */
 @media (max-width: 768px) {
   .photo-spread {
@@ -141,5 +110,4 @@ body {
     margin-top: 4rem;
   }
 }
-
 
