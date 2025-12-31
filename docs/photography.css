@@ -131,7 +131,7 @@ body {
 .item-4 { top: 100px; left: 20px; }
 .item-5 { top: 0px; left: 100px; }
 .item-6 { top: 50px; left: 330px; }
-.item-7 { top: 340px; left: 300px; }
+.item-7 { top: 50px; left: 330px; }
 
 /* MOBILE */
 @media (max-width: 768px) {
