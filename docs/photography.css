@@ -77,6 +77,16 @@ body {
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
+/* INDIVIDUAL SIZE ADJUSTMENTS */
+.item-1 img { width: 200px; } /* Mexico */
+.item-2 img { width: 200px; } /* Barcelona */
+.item-3 img { width: 200px; } /* Croatia */
+.item-4 img { width: 200px; } /* Nice */
+.item-5 img { width: 200px; } /* Scotland */
+.item-6 img { width: 240px; } /* West New York */
+.item-7 img { width: 200px; } /* Untitled */
+
+
 .photo-item:hover img {
   transform: scale(1.02);
   opacity: 0.9;
