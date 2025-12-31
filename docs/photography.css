@@ -6,6 +6,20 @@ body {
   color: #fff;
 }
 
+/* === DEV GRID OVERLAY (TEMPORARY) === */
+.photo-collage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
 /* PAGE WRAPPER */
 .photo-spread {
   display: flex;
