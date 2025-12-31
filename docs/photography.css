@@ -97,12 +97,12 @@ body {
 
 /* CLUSTER POSITIONS */
 .item-1 { top: 230px; left: 50px; }
-.item-2 { top: 170px; left: 100px; }
+.item-2 { top: 180px; left: 50px; }
 .item-3 { top: 100px; left: 150px; }
 .item-4 { top: 260px; left: 50px; }
 .item-5 { top: 0px; left: 100px; }
 .item-6 { top: 50px; left: 330px; }
-.item-7 { top: 50px; left: 330px; }
+.item-7 { top: 370px; left: 400px; }
 /* MOBILE */
 @media (max-width: 768px) {
   .photo-spread {
