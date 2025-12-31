@@ -29,50 +29,26 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    /* GRID */
     linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px),
-    /* NUMBERED SVG OVERLAY */
     url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='720' height='600'>\
 <style>text{font:10px Inter, sans-serif; fill:rgba(255,255,255,0.6);}</style>\
-<!-- X axis numbers -->\
 <g>\
-<text x='0' y='12'>0</text>\
-<text x='50' y='12'>50</text>\
-<text x='100' y='12'>100</text>\
-<text x='150' y='12'>150</text>\
-<text x='200' y='12'>200</text>\
-<text x='250' y='12'>250</text>\
-<text x='300' y='12'>300</text>\
-<text x='350' y='12'>350</text>\
-<text x='400' y='12'>400</text>\
-<text x='450' y='12'>450</text>\
-<text x='500' y='12'>500</text>\
-<text x='550' y='12'>550</text>\
-<text x='600' y='12'>600</text>\
-<text x='650' y='12'>650</text>\
-<text x='700' y='12'>700</text>\
+<text x='0' y='12'>0</text><text x='50' y='12'>50</text><text x='100' y='12'>100</text>\
+<text x='150' y='12'>150</text><text x='200' y='12'>200</text><text x='250' y='12'>250</text>\
+<text x='300' y='12'>300</text><text x='350' y='12'>350</text><text x='400' y='12'>400</text>\
+<text x='450' y='12'>450</text><text x='500' y='12'>500</text><text x='550' y='12'>550</text>\
+<text x='600' y='12'>600</text><text x='650' y='12'>650</text><text x='700' y='12'>700</text>\
 </g>\
-<!-- Y axis numbers -->\
 <g>\
-<text x='2' y='50'>50</text>\
-<text x='2' y='100'>100</text>\
-<text x='2' y='150'>150</text>\
-<text x='2' y='200'>200</text>\
-<text x='2' y='250'>250</text>\
-<text x='2' y='300'>300</text>\
-<text x='2' y='350'>350</text>\
-<text x='2' y='400'>400</text>\
-<text x='2' y='450'>450</text>\
-<text x='2' y='500'>500</text>\
-<text x='2' y='550'>550</text>\
+<text x='2' y='50'>50</text><text x='2' y='100'>100</text><text x='2' y='150'>150</text>\
+<text x='2' y='200'>200</text><text x='2' y='250'>250</text><text x='2' y='300'>300</text>\
+<text x='2' y='350'>350</text><text x='2' y='400'>400</text><text x='2' y='450'>450</text>\
+<text x='2' y='500'>500</text><text x='2' y='550'>550</text>\
 </g>\
 </svg>");
-  background-size:
-    50px 50px,
-    50px 50px,
-    cover;
+  background-size: 50px 50px, 50px 50px, cover;
   pointer-events: none;
   z-index: 1;
 }
@@ -83,21 +59,22 @@ body {
   margin-left: auto;
 }
 
-/* BASE ITEM */
+/* PHOTO ITEM */
 .photo-item {
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-decoration: none;
-  z-index: 2; /* ABOVE GRID + NUMBERS */
+  z-index: 2;
 }
 
-/* IMAGE */
+/* IMAGE — UNIFIED SIZE */
 .photo-item img {
-  display: block;
+  width: 200px;          /* ALL IMAGES SAME SIZE */
   height: auto;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  display: block;
+  transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 .photo-item:hover img {
@@ -107,7 +84,7 @@ body {
 
 /* LABEL */
 .photo-label {
-  margin-top: 0.5rem;
+  margin-top: 0.45rem;
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   color: rgba(255,255,255,0.6);
@@ -118,12 +95,6 @@ body {
   color: #fff;
 }
 
-/* IMAGE SIZES */
-.small img { width: 150px; }
-.medium img { width: 190px; }
-.large img { width: 230px; }
-.tall img { width: 200px; }
-
 /* CLUSTER POSITIONS */
 .item-1 { top: 230px; left: 50px; }
 .item-2 { top: 170px; left: 100px; }
@@ -132,7 +103,6 @@ body {
 .item-5 { top: 0px; left: 100px; }
 .item-6 { top: 50px; left: 330px; }
 .item-7 { top: 50px; left: 330px; }
-
 /* MOBILE */
 @media (max-width: 768px) {
   .photo-spread {
@@ -160,4 +130,5 @@ body {
     margin-top: 4rem;
   }
 }
+
 
