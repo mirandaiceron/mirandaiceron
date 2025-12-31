@@ -10,7 +10,6 @@ body {
 .photo-spread {
   display: flex;
   padding: 6rem 3rem;
-  background: #000;
 }
 
 /* COLLAGE CANVAS */
@@ -30,13 +29,12 @@ body {
   position: relative;
 }
 
-/* RIGHT-SIDE DESCRIPTION — BOOK-LIKE PLACEMENT */
+/* RIGHT-SIDE DESCRIPTION — FINAL POSITION */
 .photo-description {
   position: absolute;
-  top: 240px;            /* aligns with West New York image */
+  top: 180px;            /* moved UP to align with West New York */
   left: 40px;
 
-  font-family: 'Inter', sans-serif;
   font-size: 0.65rem;
   font-weight: 400;
   letter-spacing: 0.14em;
@@ -85,7 +83,6 @@ body {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   color: rgba(255,255,255,0.6);
-  transition: color 0.2s ease;
 }
 
 .photo-item:hover .photo-label {
@@ -127,5 +124,9 @@ body {
     width: 100%;
     margin-top: 4rem;
   }
-}
 
+  .photo-description {
+    position: static;
+    margin-top: 2rem;
+  }
+}
