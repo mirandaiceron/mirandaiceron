@@ -6,19 +6,6 @@ body {
   color: #fff;
 }
 
-/* === DEV GRID OVERLAY (TEMPORARY) === */
-.photo-collage::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-  z-index: 1;
-}
-
 /* PAGE WRAPPER */
 .photo-spread {
   display: flex;
@@ -31,9 +18,63 @@ body {
   position: relative;
   width: 55vw;
   max-width: 720px;
-  height: 600px; /* controls vertical cluster */
+  height: 600px;
   margin-left: 4rem;
   margin-top: 4rem;
+}
+
+/* === DEV GRID + PIXEL NUMBERS (TEMPORARY) === */
+.photo-collage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    /* GRID */
+    linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px),
+    /* NUMBERED SVG OVERLAY */
+    url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='720' height='600'>\
+<style>text{font:10px Inter, sans-serif; fill:rgba(255,255,255,0.6);}</style>\
+<!-- X axis numbers -->\
+<g>\
+<text x='0' y='12'>0</text>\
+<text x='50' y='12'>50</text>\
+<text x='100' y='12'>100</text>\
+<text x='150' y='12'>150</text>\
+<text x='200' y='12'>200</text>\
+<text x='250' y='12'>250</text>\
+<text x='300' y='12'>300</text>\
+<text x='350' y='12'>350</text>\
+<text x='400' y='12'>400</text>\
+<text x='450' y='12'>450</text>\
+<text x='500' y='12'>500</text>\
+<text x='550' y='12'>550</text>\
+<text x='600' y='12'>600</text>\
+<text x='650' y='12'>650</text>\
+<text x='700' y='12'>700</text>\
+</g>\
+<!-- Y axis numbers -->\
+<g>\
+<text x='2' y='50'>50</text>\
+<text x='2' y='100'>100</text>\
+<text x='2' y='150'>150</text>\
+<text x='2' y='200'>200</text>\
+<text x='2' y='250'>250</text>\
+<text x='2' y='300'>300</text>\
+<text x='2' y='350'>350</text>\
+<text x='2' y='400'>400</text>\
+<text x='2' y='450'>450</text>\
+<text x='2' y='500'>500</text>\
+<text x='2' y='550'>550</text>\
+</g>\
+</svg>");
+  background-size:
+    50px 50px,
+    50px 50px,
+    cover;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* RIGHT TEXT SPACE */
@@ -49,7 +90,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   text-decoration: none;
-  z-index: 2; /* ensures images sit above grid */
+  z-index: 2; /* ABOVE GRID + NUMBERS */
 }
 
 /* IMAGE */
@@ -83,43 +124,14 @@ body {
 .large img { width: 230px; }
 .tall img { width: 200px; }
 
-/* === EXACT CLUSTER POSITIONS === */
-/* tuned to match your screenshot */
-
-.item-1 { /* Scotland */
-  top: 230px;
-  left: 50px;
-}
-
-.item-2 { /* Untitled */
-  top: 150px;
-  left: 100px;
-}
-
-.item-3 { /* West New York */
-  top: 100px;
-  left: 150px;
-}
-
-.item-4 { /* Croatia */
-  top: 100px;
-  left: 20px;
-}
-
-.item-5 { /* Mexico */
-  top: 230px;
-  left: 260px;
-}
-
-.item-6 { /* Nice */
-  top: 300px;
-  left: 140px;
-}
-
-.item-7 { /* Barcelona */
-  top: 340px;
-  left: 300px;
-}
+/* CLUSTER POSITIONS */
+.item-1 { top: 230px; left: 50px; }
+.item-2 { top: 150px; left: 100px; }
+.item-3 { top: 100px; left: 150px; }
+.item-4 { top: 100px; left: 20px; }
+.item-5 { top: 230px; left: 260px; }
+.item-6 { top: 300px; left: 140px; }
+.item-7 { top: 340px; left: 300px; }
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -148,3 +160,4 @@ body {
     margin-top: 4rem;
   }
 }
+
