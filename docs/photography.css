@@ -79,10 +79,10 @@ body {
 
 /* INDIVIDUAL SIZE ADJUSTMENTS */
 .item-1 img { width: 200px; } /* Mexico */
-.item-2 img { width: 200px; } /* Barcelona */
+.item-2 img { width: 240px; } /* Barcelona */
 .item-3 img { width: 200px; } /* Croatia */
 .item-4 img { width: 200px; } /* Nice */
-.item-5 img { width: 200px; } /* Scotland */
+.item-5 img { width: 240px; } /* Scotland */
 .item-6 img { width: 240px; } /* West New York */
 .item-7 img { width: 200px; } /* Untitled */
 
