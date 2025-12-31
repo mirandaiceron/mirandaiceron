@@ -33,22 +33,19 @@ body {
 /* RIGHT-SIDE DESCRIPTION — BOOK-LIKE PLACEMENT */
 .photo-description {
   position: absolute;
-  top: 50%;
+  top: 240px;            /* aligns with West New York image */
   left: 40px;
-  transform: translateY(-50%) translateY(0px);
 
   font-family: 'Inter', sans-serif;
   font-size: 0.65rem;
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-
   line-height: 1.6;
-  color: rgba(255,255,255,0.55);
 
+  color: rgba(255,255,255,0.55);
   max-width: 280px;
 }
-
 
 /* PHOTO ITEM */
 .photo-item {
