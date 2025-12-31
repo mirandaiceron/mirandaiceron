@@ -79,7 +79,7 @@ body {
 
 /* INDIVIDUAL SIZE ADJUSTMENTS */
 .item-1 img { width: 240px; } /* Mexico */
-.item-2 img { width: 240px; } /* Barcelona */
+.item-2 img { width: 220px; } /* Barcelona */
 .item-3 img { width: 200px; } /* Croatia */
 .item-4 img { width: 200px; } /* Nice */
 .item-5 img { width: 215px; } /* Scotland */
