@@ -195,32 +195,39 @@ body {
    MOBILE
 ========================= */
 @media (max-width: 768px) {
+  :root {
+    --header-height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
 
   .nav-inner {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    padding: 1rem 1.5rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.2rem 1.5rem;
   }
 
-  .hero {
-    height: auto;
-    padding: 6rem 1.5rem 4rem;
+  .nav-left,
+  .nav-right {
+    justify-content: center;
+    gap: 1.2rem;
   }
 
-  .featured {
-    grid-template-columns: 1fr;
-    padding: 4rem 1.5rem;
+  .nav-left a,
+  .nav-right a {
+    font-size: 0.65rem;
   }
 
-  .featured-right {
-    grid-template-columns: 1fr;
-  }
-
-  .card .thumb {
-    height: 200px;
+  .name-top,
+  .name-bottom {
+    font-size: 1.1rem;
+    line-height: 1.1;
   }
 }
+
 
 
 
