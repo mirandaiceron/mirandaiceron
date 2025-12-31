@@ -107,12 +107,12 @@ body {
 }
 
 /* CLUSTER POSITIONS */
-.item-1 { top: 340px; left: 250px; }
+.item-1 { top: 320px; left: 250px; }
 .item-2 { top: 480px; left: 380px; }
 .item-3 { top: 150px; left: 0px; }
-.item-4 { top: 370px; left: 50px; }
+.item-4 { top: 300px; left: 50px; }
 .item-5 { top: 0px; left: 100px; }
-.item-6 { top: 250px; left: 460px; }
+.item-6 { top: 200px; left: 460px; }
 .item-7 { top: 50px; left: 285px; }
 /* MOBILE */
 @media (max-width: 768px) {
