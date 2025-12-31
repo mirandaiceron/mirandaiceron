@@ -33,9 +33,9 @@ body {
 /* RIGHT-SIDE DESCRIPTION — BOOK-LIKE PLACEMENT */
 .photo-description {
   position: absolute;
-  top: 50%;                 /* anchor to center */
+  top: 50%;
   left: 40px;
-  transform: translateY(40px); /* push slightly below center */
+  transform: translateY(-50%) translateY(40px);
 
   font-family: 'Inter', sans-serif;
   font-size: 0.65rem;
@@ -48,6 +48,7 @@ body {
 
   max-width: 280px;
 }
+
 
 /* PHOTO ITEM */
 .photo-item {
