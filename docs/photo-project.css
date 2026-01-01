@@ -1,0 +1,24 @@
+.photo-project {
+  padding: 6rem 3rem 4rem;
+}
+
+.project-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.contact-sheet {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.contact-sheet img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #111;
+}
