@@ -23,7 +23,6 @@ body {
 
 /* =========================
    NAV — FIXED + STABLE
-   NAV — FIXED
 ========================= */
 .top-nav {
   position: fixed;
@@ -39,7 +38,7 @@ body {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Force ALL nav links white (fixes purple issue) */
+/* Force ALL nav links white */
 .top-nav a,
 .top-nav a:visited,
 .top-nav a:hover,
@@ -82,7 +81,6 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-/* Name */
 .name-top,
 .name-bottom {
   display: block;
@@ -193,44 +191,6 @@ body {
 }
 
 /* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-  :root {
-    --header-height: 140px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .nav-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1.2rem 1.5rem;
-  }
-
-  .nav-left,
-  .nav-right {
-    justify-content: center;
-    gap: 1.2rem;
-  }
-
-  .nav-left a,
-  .nav-right a {
-    font-size: 0.65rem;
-  }
-
-  .name-top,
-  .name-bottom {
-    font-size: 1.1rem;
-    line-height: 1.1;
-  }
-}
-
-/* =========================
-   ABOUT — SCROLL REVEAL
    ABOUT
 ========================= */
 .about {
@@ -285,14 +245,11 @@ body {
   color: rgba(255,255,255,0.85);
 }
 
-/* Reveal animation */
 /* =========================
    SCROLL REVEAL
 ========================= */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
   transform: translateY(48px);
   transition:
     opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
@@ -304,10 +261,6 @@ body {
   transform: translateY(0);
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .about-portrait {
-    width: 200px;
 /* =========================
    MOBILE
 ========================= */
@@ -315,12 +268,11 @@ body {
   :root {
     --header-height: 140px;
   }
-}
-
 
   .nav-inner {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.75rem;
     padding: 1.2rem 1.5rem;
   }
@@ -328,11 +280,27 @@ body {
   .nav-left,
   .nav-right {
     justify-content: center;
+    gap: 1.2rem;
+  }
+
+  .nav-left a,
+  .nav-right a {
+    font-size: 0.65rem;
   }
 
   .name-top,
   .name-bottom {
     font-size: 1.1rem;
+    line-height: 1.1;
+  }
+
+  .featured {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .featured-right {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -341,5 +309,6 @@ body {
     width: 200px;
   }
 }
+
 
 
