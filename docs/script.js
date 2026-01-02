@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     row.addEventListener('mouseenter', () => {
       scrollInterval = setInterval(() => {
-        strip.scrollLeft += 0.4; // subtle speed
+        strip.scrollLeft += 0.6; // subtle speed
       }, 16);
     });
 
