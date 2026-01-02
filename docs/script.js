@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* EXISTING HEADER / HERO CODE (unchanged) */
+  /* =========================
+     HEADER / HERO (unchanged)
+  ========================= */
   const header = document.querySelector('.top-nav');
   const heroText = document.querySelector('.hero-text');
   const video = document.querySelector('.hero-video');
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('click', startVideo, { once: true });
 
   /* =========================
-     LIGHTBOX + ARROWS
+     LIGHTBOX (unchanged)
   ========================= */
   const images = Array.from(document.querySelectorAll('.contact-sheet img'));
   const lightbox = document.getElementById('lightbox');
@@ -66,47 +68,55 @@ document.addEventListener('DOMContentLoaded', () => {
     img.addEventListener('click', () => openLightbox(index));
   });
 
-  nextBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showNext();
-  });
+  if (nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showNext();
+    });
 
-  prevBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showPrev();
-  });
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showPrev();
+    });
+  }
 
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('is-open');
-    lightboxImg.src = '';
-  });
+  if (lightbox) {
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('is-open');
+      lightboxImg.src = '';
+    });
+  }
 
   document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('is-open')) return;
+    if (!lightbox || !lightbox.classList.contains('is-open')) return;
 
     if (e.key === 'ArrowRight') showNext();
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'Escape') lightbox.classList.remove('is-open');
   });
 
-});
+  /* =========================
+     FILM STRIP AUTO-SCROLL
+  ========================= */
+  const filmRows = document.querySelectorAll('.film-row');
 
-const filmRows = document.querySelectorAll('.film-row');
+  filmRows.forEach(row => {
+    const strip = row.querySelector('.film-stills');
+    if (!strip) return;
 
-filmRows.forEach(row => {
-  const strip = row.querySelector('.film-stills');
-  let scrollInterval;
+    let scrollInterval;
 
-  row.addEventListener('mouseenter', () => {
-    scrollInterval = setInterval(() => {
-      strip.scrollLeft += 0.5; // speed (smaller = subtler)
-    }, 16); // ~60fps
+    row.addEventListener('mouseenter', () => {
+      scrollInterval = setInterval(() => {
+        strip.scrollLeft += 0.4; // subtle speed
+      }, 16);
+    });
+
+    row.addEventListener('mouseleave', () => {
+      clearInterval(scrollInterval);
+    });
   });
 
-  row.addEventListener('mouseleave', () => {
-    clearInterval(scrollInterval);
-  });
 });
-
 
 
