@@ -126,3 +126,38 @@ body {
   }
 }
 
+/* LIGHTBOX ARROWS */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem;
+  z-index: 1001;
+  transition: color 0.2s ease;
+}
+
+.lightbox-arrow:hover {
+  color: #fff;
+}
+
+.lightbox-arrow.left {
+  left: 2rem;
+}
+
+.lightbox-arrow.right {
+  right: 2rem;
+}
+
+/* Hide arrows on very small screens if desired */
+@media (max-width: 600px) {
+  .lightbox-arrow {
+    display: none;
+  }
+}
+
+
