@@ -23,7 +23,7 @@
 
 /* IMAGES */
 .film-stills img {
-  height: 120px;
+  height: 140px;
   width: auto;
   display: block;
   background: #111;
@@ -58,6 +58,15 @@
   text-transform: uppercase;
   color: rgba(255,255,255,0.6);
 }
+
+.film-stills {
+  scrollbar-width: none;          /* Firefox */
+}
+
+.film-stills::-webkit-scrollbar {
+  display: none;                  /* Chrome/Safari */
+}
+
 
 /* =========================
    MOBILE
