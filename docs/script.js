@@ -12,28 +12,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* =========================
-     SCROLL REVEAL (STAGGERED)
+     IMAGE REVEAL (LOGO → PORTRAIT)
   ========================= */
-  const revealItems = document.querySelectorAll('.reveal');
+  const logo = document.querySelector('.about-img.logo');
+  const portrait = document.querySelector('.about-img.portrait');
 
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const index = [...revealItems].indexOf(entry.target);
-        const delay = index * 180;
+  if (logo && portrait) {
+    setTimeout(() => {
+      logo.classList.remove('is-visible');
+      portrait.classList.add('is-visible');
+    }, 1400);
+  }
 
-        setTimeout(() => {
-          entry.target.classList.add('is-visible');
-        }, delay);
+  /* =========================
+     TEXT REVEAL
+  ========================= */
+  const text = document.querySelector('.about-text');
 
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.15
-  });
-
-  revealItems.forEach(item => revealObserver.observe(item));
+  if (text) {
+    setTimeout(() => {
+      text.classList.add('is-visible');
+    }, 2200);
+  }
 
 });
+
 
