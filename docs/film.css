@@ -13,18 +13,23 @@
   margin-bottom: 4rem;
 }
 
-/* STILL STRIP */
+/* SHARED ALIGNMENT WRAPPER */
+.film-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================
+   STILL STRIP
+========================= */
 .film-stills {
   display: flex;
   gap: 0;
   overflow-x: auto;
   padding-bottom: 0.75rem;
 
-  max-width: 1400px;     /* optional but recommended */
-  margin: 0 auto;
-
   scrollbar-width: none;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
 .film-stills::-webkit-scrollbar {
@@ -41,18 +46,17 @@
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* Hover stays subtle */
+/* Subtle hover */
 .film-row:hover .film-stills img {
   transform: scale(1.01);
   opacity: 0.95;
 }
 
-/* METADATA */
+/* =========================
+   METADATA
+========================= */
 .film-meta {
   margin-top: 0.75rem;
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .film-meta h2 {
