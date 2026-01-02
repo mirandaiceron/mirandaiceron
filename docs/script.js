@@ -54,6 +54,12 @@ lightbox.addEventListener('click', () => {
   lightboxImg.src = '';
 });
 
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    lightbox.classList.remove('is-open');
+  }
+});
+
 
 
 
