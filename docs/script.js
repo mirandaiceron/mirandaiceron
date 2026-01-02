@@ -1,6 +1,3 @@
-
-alert('script loaded');
-
 /* =========================
    HEADER / HERO
 ========================= */
@@ -48,7 +45,7 @@ const observer = new IntersectionObserver(entries => {
     let driftId;
 
     const drift = () => {
-      strip.scrollLeft += 0.3;
+      strip.scrollLeft += 2;
       driftId = requestAnimationFrame(drift);
     };
 
