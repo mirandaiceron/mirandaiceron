@@ -35,7 +35,7 @@ window.addEventListener('click', startVideo, { once: true });
 /* =========================
    FILM STRIP AUTO-DRIFT
 ========================= */
-const filmStrips = document.querySelectorAll('.film');
+const filmStrips = document.querySelectorAll('.film-stills');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
