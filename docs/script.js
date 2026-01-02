@@ -36,5 +36,24 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('click', startVideo, { once: true });
 });
 
+const images = document.querySelectorAll('.contact-sheet img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent = img.dataset.caption || '';
+    lightbox.classList.add('is-open');
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('is-open');
+  lightboxImg.src = '';
+});
+
+
 
 
