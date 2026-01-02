@@ -100,23 +100,28 @@ document.addEventListener('DOMContentLoaded', () => {
   ========================= */
   const filmRows = document.querySelectorAll('.film-row');
 
-  filmRows.forEach(row => {
-    const strip = row.querySelector('.film-stills');
-    if (!strip) return;
+filmRows.forEach(row => {
+  const strip = row.querySelector('.film-stills');
+  if (!strip) return;
 
-    let scrollInterval;
+  let isHovering = false;
 
-    row.addEventListener('mouseenter', () => {
-      scrollInterval = setInterval(() => {
-        strip.scrollLeft += 0.6; // subtle speed
-      }, 16);
-    });
+  const drift = () => {
+    if (!isHovering) return;
+    strip.scrollLeft += 0.35; // subtle speed
+    requestAnimationFrame(drift);
+  };
 
-    row.addEventListener('mouseleave', () => {
-      clearInterval(scrollInterval);
-    });
+  row.addEventListener('mouseenter', () => {
+    // only drift if scrolling is possible
+    if (strip.scrollWidth <= strip.clientWidth) return;
+    isHovering = true;
+    drift();
   });
 
+  row.addEventListener('mouseleave', () => {
+    isHovering = false;
+  });
 });
 
 
