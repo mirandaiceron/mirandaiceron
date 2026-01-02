@@ -15,15 +15,16 @@ body {
   padding: 6rem 3rem 4rem;
 }
 
-/* =========================
-   PROJECT TITLE
-========================= */
 .project-title {
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 3rem;
   color: rgba(255,255,255,0.6);
+
+  max-width: 900px;   /* SAME as contact-sheet */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* =========================
