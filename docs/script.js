@@ -1,40 +1,90 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* =========================
-     HEADER
+     HEADER / HERO
   ========================= */
   const header = document.querySelector('.top-nav');
+  const heroText = document.querySelector('.hero-text');
+  const video = document.querySelector('.hero-video');
+
+  let videoStarted = false;
+
+  const startVideo = () => {
+    if (!videoStarted && video) {
+      video.play().catch(() => {});
+      videoStarted = true;
+    }
+  };
 
   window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
     if (header) {
-      header.classList.toggle('is-solid', window.scrollY > 80);
+      header.classList.toggle('is-solid', scrollY > 80);
     }
+
+    if (heroText) {
+      heroText.style.opacity = Math.max(1 - scrollY / 400, 0);
+      heroText.style.transform = `translateY(${scrollY * 0.12}px)`;
+    }
+
+    startVideo();
   });
 
-  /* =========================
-     IMAGE REVEAL (LOGO → PORTRAIT)
-  ========================= */
-  const logo = document.querySelector('.about-img.logo');
-  const portrait = document.querySelector('.about-img.portrait');
-
-  if (logo && portrait) {
-    setTimeout(() => {
-      logo.classList.remove('is-visible');
-      portrait.classList.add('is-visible');
-    }, 1400);
-  }
+  window.addEventListener('click', startVideo, { once: true });
 
   /* =========================
-     TEXT REVEAL
+     FILM STRIP AUTO-DRIFT
   ========================= */
-  const text = document.querySelector('.about-text');
+  document.querySelectorAll('.film-row').forEach(row => {
+    const strip = row.querySelector('.film-stills');
+    if (!strip) return;
 
-  if (text) {
-    setTimeout(() => {
-      text.classList.add('is-visible');
-    }, 2200);
-  }
+    let rafId;
+    let hovering = false;
+
+    const drift = () => {
+      if (!hovering) return;
+
+      strip.scrollLeft += 1;
+
+      if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth) {
+        strip.scrollLeft = 0;
+      }
+
+      rafId = requestAnimationFrame(drift);
+    };
+
+    row.addEventListener('mouseenter', () => {
+      hovering = true;
+      requestAnimationFrame(drift);
+    });
+
+    row.addEventListener('mouseleave', () => {
+      hovering = false;
+      cancelAnimationFrame(rafId);
+    });
+  });
 
 });
+
+/* =========================
+   ABOUT — SCROLL REVEAL
+========================= */
+const revealItems = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+revealItems.forEach(item => revealObserver.observe(item));
+
 
 
