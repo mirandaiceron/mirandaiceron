@@ -37,28 +37,23 @@ window.addEventListener('click', startVideo, { once: true });
 ========================= */
 const filmStrips = document.querySelectorAll('.film-stills');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-
-    const strip = entry.target;
-    let driftId;
-
-    const drift = () => {
-      strip.scrollLeft += 0.6;
-      driftId = requestAnimationFrame(drift);
-    };
-
-    drift();
-
-    observer.unobserve(strip);
-  });
-}, { threshold: 0.5 });
-
 filmStrips.forEach(strip => {
-  if (strip.scrollWidth > strip.clientWidth) {
-    observer.observe(strip);
-  }
+  if (strip.scrollWidth <= strip.clientWidth) return;
+
+  let raf;
+
+  const drift = () => {
+    strip.scrollLeft += 0.6;
+
+    // when we reach the end, reset to the start
+    if (strip.scrollLeft >= strip.scrollWidth - strip.clientWidth) {
+      strip.scrollLeft = 0;
+    }
+
+    raf = requestAnimationFrame(drift);
+  };
+
+  drift();
 });
 
 
