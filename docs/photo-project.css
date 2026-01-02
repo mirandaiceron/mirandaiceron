@@ -48,6 +48,16 @@ body {
   background: #111;
 }
 
+/* THUMBNAIL HOVER */
+.contact-sheet img {
+  transition: transform 0.25s ease;
+}
+
+.contact-sheet img:hover {
+  transform: scale(1.03);
+}
+
+
 /* =========================
    LIGHTBOX
 ========================= */
@@ -87,8 +97,9 @@ body {
 }
 
 .contact-sheet img {
-  cursor: zoom-in;
+  cursor: pointer;
 }
+
 
 
 /* =========================
