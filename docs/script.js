@@ -1,78 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* HEADER / HERO */
+  /* =========================
+     HEADER
+  ========================= */
   const header = document.querySelector('.top-nav');
-  const heroText = document.querySelector('.hero-text');
-  const video = document.querySelector('.hero-video');
-
-  let videoStarted = false;
-
-  const startVideo = () => {
-    if (!videoStarted && video) {
-      video.play().catch(() => {});
-      videoStarted = true;
-    }
-  };
 
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-
     if (header) {
-      header.classList.toggle('is-solid', scrollY > 80);
+      header.classList.toggle('is-solid', window.scrollY > 80);
     }
-
-    if (heroText) {
-      heroText.style.opacity = Math.max(1 - scrollY / 400, 0);
-      heroText.style.transform = `translateY(${scrollY * 0.12}px)`;
-    }
-
-    startVideo();
   });
 
-  window.addEventListener('click', startVideo, { once: true });
-
-  /* FILM STRIP AUTO-DRIFT */
-  document.querySelectorAll('.film-row').forEach(row => {
-    const strip = row.querySelector('.film-stills');
-    if (!strip) return;
-
-    let rafId;
-    let hovering = false;
-
-    const drift = () => {
-      if (!hovering) return;
-
-      strip.scrollLeft += 1;
-
-      if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth) {
-        strip.scrollLeft = 0;
-      }
-
-      rafId = requestAnimationFrame(drift);
-    };
-
-    row.addEventListener('mouseenter', () => {
-      hovering = true;
-      requestAnimationFrame(drift);
-    });
-
-    row.addEventListener('mouseleave', () => {
-      hovering = false;
-      cancelAnimationFrame(rafId);
-    });
-  });
-
-  /* ABOUT — SCROLL REVEAL */
+  /* =========================
+     SCROLL REVEAL (STAGGERED)
+  ========================= */
   const revealItems = document.querySelectorAll('.reveal');
 
   const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+        const index = [...revealItems].indexOf(entry.target);
+        const delay = index * 180;
+
+        setTimeout(() => {
+          entry.target.classList.add('is-visible');
+        }, delay);
+
+        revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, {
+    threshold: 0.15
+  });
 
   revealItems.forEach(item => revealObserver.observe(item));
 
 });
+
