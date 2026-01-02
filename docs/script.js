@@ -35,29 +35,31 @@ window.addEventListener('click', startVideo, { once: true });
 /* =========================
    FILM STRIP AUTO-DRIFT
 ========================= */
-const filmRows = document.querySelectorAll('.film-row');
+const filmStrips = document.querySelectorAll('.film-stills');
 
-filmRows.forEach(row => {
-  const strip = row.querySelector('.film-stills');
-  if (!strip) return;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
 
-  let isHovering = false;
+    const strip = entry.target;
+    let driftId;
 
-  const drift = () => {
-    if (!isHovering) return;
-    strip.scrollLeft += 0.4; // subtle, visible
-    requestAnimationFrame(drift);
-  };
+    const drift = () => {
+      strip.scrollLeft += 0.3;
+      driftId = requestAnimationFrame(drift);
+    };
 
-  row.addEventListener('mouseenter', () => {
-    if (strip.scrollWidth <= strip.clientWidth) return;
-    isHovering = true;
     drift();
-  });
 
-  row.addEventListener('mouseleave', () => {
-    isHovering = false;
+    observer.unobserve(strip);
   });
+}, { threshold: 0.5 });
+
+filmStrips.forEach(strip => {
+  if (strip.scrollWidth > strip.clientWidth) {
+    observer.observe(strip);
+  }
 });
+
 
 
