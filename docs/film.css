@@ -13,7 +13,7 @@
   margin-bottom: 4rem;
 }
 
-/* SHARED ALIGNMENT WRAPPER */
+/* Width constraint — REQUIRED for drift */
 .film-inner {
   max-width: 1400px;
   margin: 0 auto;
@@ -24,25 +24,22 @@
 ========================= */
 .film-stills {
   display: flex;
-  gap: 0;
+  width: 100%;                 /* REQUIRED */
   overflow-x: auto;
-  padding-bottom: 0.75rem;
-
   scrollbar-width: none;
-  scroll-behavior: smooth;
 }
 
 .film-stills::-webkit-scrollbar {
   display: none;
 }
 
-/* IMAGES */
+/* Images */
 .film-stills img {
   height: 160px;
   width: auto;
+  flex-shrink: 0;              /* REQUIRED */
   display: block;
   background: #111;
-  margin: 0;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
