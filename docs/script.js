@@ -91,5 +91,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+const filmRows = document.querySelectorAll('.film-row');
+
+filmRows.forEach(row => {
+  const strip = row.querySelector('.film-stills');
+  let scrollInterval;
+
+  row.addEventListener('mouseenter', () => {
+    scrollInterval = setInterval(() => {
+      strip.scrollLeft += 0.5; // speed (smaller = subtler)
+    }, 16); // ~60fps
+  });
+
+  row.addEventListener('mouseleave', () => {
+    clearInterval(scrollInterval);
+  });
+});
+
 
 
