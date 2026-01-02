@@ -38,7 +38,6 @@ body {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Force ALL nav links white */
 .top-nav a,
 .top-nav a:visited,
 .top-nav a:hover,
@@ -90,73 +89,37 @@ body {
 }
 
 /* =========================
-   ABOUT — SCROLL REVEAL
+   MOBILE NAV
 ========================= */
-.about {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6rem 1.5rem;
-}
+@media (max-width: 768px) {
+  :root {
+    --header-height: 140px;
+  }
 
-.about-inner {
-  max-width: 520px;
-  text-align: center;
-}
+  .nav-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.2rem 1.5rem;
+  }
 
-.about-logo img {
-  width: 120px;
-  margin-bottom: 3rem;
-  opacity: 0.85;
-}
+  .nav-left,
+  .nav-right {
+    justify-content: center;
+    gap: 1.2rem;
+  }
 
-.about-portrait {
-  width: 260px;
-  margin: 0 auto 3rem;
-}
+  .nav-left a,
+  .nav-right a {
+    font-size: 0.65rem;
+  }
 
-.about-portrait img {
-  width: 100%;
-  display: block;
-}
-
-.about-text h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-}
-
-.about-tagline {
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 1.5rem;
-}
-
-.about-bio {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.85);
-}
-
-/* Reveal animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .about-portrait {
-    width: 200px;
+  .name-top,
+  .name-bottom {
+    font-size: 1.1rem;
+    line-height: 1.1;
   }
 }
+
 
