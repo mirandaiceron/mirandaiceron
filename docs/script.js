@@ -45,7 +45,7 @@ const observer = new IntersectionObserver(entries => {
     let driftId;
 
     const drift = () => {
-      strip.scrollLeft += 2;
+      strip.scrollLeft += 0.6;
       driftId = requestAnimationFrame(drift);
     };
 
