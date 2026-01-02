@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const drift = () => {
       if (!hovering) return;
 
-      strip.scrollLeft += 0.6; // slightly faster so you SEE it
+      strip.scrollLeft += 0.8; // slightly faster so you SEE it
 
       if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth) {
         strip.scrollLeft = 0;
