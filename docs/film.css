@@ -28,15 +28,12 @@
   display: block;
   background: #111;
 
-  /* makes them feel like a continuous strip */
-  margin-right: 4px;       /* very subtle separation */
+  /* NO spacing */
+  margin: 0;
+
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* optional: remove margin on last image */
-.film-stills img:last-child {
-  margin-right: 0;
-}
 
 /* hover stays subtle */
 .film-row:hover .film-stills img {
