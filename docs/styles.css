@@ -22,7 +22,7 @@ body {
 }
 
 /* =========================
-   NAV
+   NAV — FIXED + STABLE
 ========================= */
 .top-nav {
   position: fixed;
@@ -30,14 +30,19 @@ body {
   width: 100%;
   z-index: 50;
   background: transparent;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .top-nav.is-solid {
   background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-.top-nav a {
+/* Force ALL nav links white */
+.top-nav a,
+.top-nav a:visited,
+.top-nav a:hover,
+.top-nav a:active {
   color: #fff;
   text-decoration: none;
 }
@@ -57,6 +62,14 @@ body {
   gap: 1.5rem;
 }
 
+.nav-left {
+  justify-self: start;
+}
+
+.nav-right {
+  justify-self: end;
+}
+
 .nav-left a,
 .nav-right a {
   font-size: 0.7rem;
@@ -64,6 +77,7 @@ body {
 }
 
 .nav-center {
+  text-align: center;
   font-family: 'Playfair Display', serif;
 }
 
@@ -72,16 +86,17 @@ body {
   display: block;
   font-size: 1.2rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 /* =========================
-   ABOUT LAYOUT
+   ABOUT — SCROLL REVEAL
 ========================= */
 .about {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 6rem 1.5rem;
 }
 
@@ -90,47 +105,22 @@ body {
   text-align: center;
 }
 
-/* =========================
-   SINGLE IMAGE REVEAL
-========================= */
-.about-image {
-  position: relative;
+.about-logo img {
+  width: 120px;
+  margin-bottom: 3rem;
+  opacity: 0.85;
+}
+
+.about-portrait {
   width: 260px;
-  height: 260px;
   margin: 0 auto 3rem;
 }
 
-.about-img {
-  position: absolute;
-  inset: 0;
+.about-portrait img {
   width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: scale(0.96);
-  transition:
-    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  display: block;
 }
 
-.about-img.is-visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Logo specific */
-.about-img.logo {
-  object-fit: contain;
-  padding: 1.5rem;
-}
-
-/* Portrait */
-.about-img.portrait {
-  object-fit: cover;
-}
-
-/* =========================
-   TEXT
-========================= */
 .about-text h1 {
   font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
@@ -151,15 +141,11 @@ body {
   color: rgba(255,255,255,0.85);
 }
 
-/* =========================
-   TEXT REVEAL
-========================= */
+/* Reveal animation */
 .reveal {
   opacity: 0;
   transform: translateY(32px);
-  transition:
-    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .reveal.is-visible {
@@ -167,13 +153,10 @@ body {
   transform: translateY(0);
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* Mobile */
 @media (max-width: 600px) {
-  .about-image {
+  .about-portrait {
     width: 200px;
-    height: 200px;
   }
 }
 
