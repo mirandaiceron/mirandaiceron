@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('click', startVideo, { once: true });
 
   /* =========================
-     FILM STRIP AUTO-DRIFT
+     FILM PAGE — HOVER AUTO-DRIFT
   ========================= */
   document.querySelectorAll('.film-row').forEach(row => {
     const strip = row.querySelector('.film-stills');
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     row.addEventListener('mouseenter', () => {
       hovering = true;
-      requestAnimationFrame(drift);
+      rafId = requestAnimationFrame(drift);
     });
 
     row.addEventListener('mouseleave', () => {
@@ -67,22 +67,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* =========================
+     PHOTOGRAPHY — LIGHTBOX
+  ========================= */
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = document.querySelector('.lightbox img');
+  const lightboxCaption = document.querySelector('.lightbox .caption');
+
+  document.querySelectorAll('.photo-grid img').forEach(img => {
+    img.addEventListener('click', () => {
+      if (!lightbox || !lightboxImg) return;
+
+      lightbox.classList.add('is-visible');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+
+      if (lightboxCaption) {
+        lightboxCaption.textContent = img.dataset.caption || '';
+      }
+    });
+  });
+
+  if (lightbox) {
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('is-visible');
+    });
+  }
+
+  /* =========================
      ABOUT — SCROLL REVEAL
   ========================= */
   const revealItems = document.querySelectorAll('.reveal');
 
-  const revealObserver = new IntersectionObserver(
-    entries => {
+  if (revealItems.length) {
+    const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
         }
       });
-    },
-    { threshold: 0.2 }
-  );
+    }, { threshold: 0.2 });
 
-  revealItems.forEach(item => revealObserver.observe(item));
+    revealItems.forEach(item => revealObserver.observe(item));
+  }
 
 });
+
 
