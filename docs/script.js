@@ -33,23 +33,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('click', startVideo, { once: true });
 
-});
+  /* =========================
+     FILM STRIP AUTO-DRIFT
+  ========================= */
+  document.querySelectorAll('.film-row').forEach(row => {
+    const strip = row.querySelector('.film-stills');
+    if (!strip) return;
 
-/* =========================
-   ABOUT — SCROLL REVEAL
-========================= */
-const revealItems = document.querySelectorAll('.reveal');
+    let rafId;
+    let hovering = false;
 
-const revealObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+    const drift = () => {
+      if (!hovering) return;
+
+      strip.scrollLeft += 1;
+
+      if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth) {
+        strip.scrollLeft = 0;
       }
-    });
-  },
-  { threshold: 0.2 }
-);
 
-revealItems.forEach(item => revealObserver.observe(item));
+      rafId = requestAnimationFrame(drift);
+    };
+
+    row.addEventListener('mouseenter', () => {
+      hovering = true;
+      requestAnimationFrame(drift);
+    });
+
+    row.addEventListener('mouseleave', () => {
+      hovering = false;
+      cancelAnimationFrame(rafId);
+    });
+  });
+
+  /* =========================
+     ABOUT — SCROLL REVEAL
+  ========================= */
+  const revealItems = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  revealItems.forEach(item => revealObserver.observe(item));
+
+});
 
