@@ -33,39 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('click', startVideo, { once: true });
 
-  /* =========================
-     FILM STRIP AUTO-DRIFT
-  ========================= */
-  document.querySelectorAll('.film-row').forEach(row => {
-    const strip = row.querySelector('.film-stills');
-    if (!strip) return;
-
-    let rafId;
-    let hovering = false;
-
-    const drift = () => {
-      if (!hovering) return;
-
-      strip.scrollLeft += 1;
-
-      if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth) {
-        strip.scrollLeft = 0;
-      }
-
-      rafId = requestAnimationFrame(drift);
-    };
-
-    row.addEventListener('mouseenter', () => {
-      hovering = true;
-      requestAnimationFrame(drift);
-    });
-
-    row.addEventListener('mouseleave', () => {
-      hovering = false;
-      cancelAnimationFrame(rafId);
-    });
-  });
-
 });
 
 /* =========================
@@ -85,6 +52,4 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealItems.forEach(item => revealObserver.observe(item));
-
-
 
