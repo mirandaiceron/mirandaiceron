@@ -83,42 +83,51 @@ body {
 }
 
 /* =========================
-   ABOUT — TRUE HOVER SWAP
+   ABOUT
 ========================= */
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem;
+}
+
+.about-inner {
+  max-width: 520px;
+  text-align: center;
+}
+
+/* --- Hover Swap Image --- */
 .about-image {
   position: relative;
   width: 260px;
-  height: 260px; /* CRITICAL: locks the swap area */
   margin: 0 auto 3rem;
   cursor: pointer;
 }
 
-.swap-img {
-  position: absolute;          /* BOTH images stacked */
-  inset: 0;
+.about-img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  display: block;
   transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Default state */
-.swap-img.logo {
-  opacity: 1;
-  transform: scale(1);
+.about-img.logo {
+  opacity: 0.9;
 }
 
-.swap-img.portrait {
+.about-img.portrait {
+  position: absolute;
+  inset: 0;
   opacity: 0;
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
-/* Hover swap */
 .about-image:hover .logo {
   opacity: 0;
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
 .about-image:hover .portrait {
@@ -126,19 +135,66 @@ body {
   transform: scale(1);
 }
 
+/* --- Text --- */
+.about-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-tagline {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 1.5rem;
+}
+
+.about-bio {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* =========================
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-  .swap-img.logo {
+  :root {
+    --header-height: 140px;
+  }
+
+  .about-img.logo {
     opacity: 0;
   }
 
-  .swap-img.portrait {
+  .about-img.portrait {
     opacity: 1;
-    transform: scale(1);
+    position: relative;
   }
 }
+
+@media (max-width: 600px) {
+  .about-image {
+    width: 200px;
+  }
+}
+
 
 
