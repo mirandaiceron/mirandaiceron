@@ -1,45 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* =========================
-     HEADER / HERO (HOME ONLY)
-  ========================= */
-  const header = document.querySelector('.top-nav');
-  const heroText = document.querySelector('.home .hero-text');
-  const video = document.querySelector('.home .hero-video');
+   HEADER / HERO (HOME ONLY)
+========================= */
+const header = document.querySelector('.top-nav');
+const heroText = document.querySelector('.home .hero-text');
+const video = document.querySelector('.home .hero-video');
 
-  let videoStarted = false;
+let videoStarted = false;
+let hasScrolled = false;
 
-  // Ensure hero text is visible on load
-  if (heroText) {
-    heroText.style.opacity = 1;
-    heroText.style.transform = 'translateY(0)';
+// Force visible on load
+if (heroText) {
+  heroText.style.opacity = 1;
+  heroText.style.transform = 'translateY(0)';
+}
+
+const startVideo = () => {
+  if (!videoStarted && video) {
+    video.play().catch(() => {});
+    videoStarted = true;
+  }
+};
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  if (!hasScrolled) {
+    hasScrolled = true;
+    return;
   }
 
-  const startVideo = () => {
-    if (!videoStarted && video) {
-      video.play().catch(() => {});
-      videoStarted = true;
-    }
-  };
+  if (header) {
+    header.classList.toggle('is-solid', scrollY > 80);
+  }
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
+  if (heroText) {
+    heroText.style.opacity = Math.max(1 - scrollY / 600, 0.2);
+    heroText.style.transform = `translateY(${scrollY * 0.12}px)`;
+  }
 
-    // Header solid background on scroll
-    if (header) {
-      header.classList.toggle('is-solid', scrollY > 80);
-    }
+  startVideo();
+});
 
-    // Hero text fade + drift (HOME PAGE ONLY)
-    if (heroText) {
-      heroText.style.opacity = Math.max(1 - scrollY / 400, 0);
-      heroText.style.transform = `translateY(${scrollY * 0.12}px)`;
-    }
+window.addEventListener('click', startVideo, { once: true });
 
-    startVideo();
-  });
-
-  window.addEventListener('click', startVideo, { once: true });
 
   /* =========================
      FILM PAGE — HOVER AUTO-DRIFT
