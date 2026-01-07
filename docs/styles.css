@@ -187,8 +187,8 @@ body {
 /* LOGO */
 .about-logo {
   position: fixed;
-  bottom: -80px;
-  left: -60px;
+  bottom: -40px;
+  left: -80px;
   width: 520px;
   opacity: 0.95;
   z-index: 10;
