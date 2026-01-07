@@ -1,13 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* =========================
-     HEADER / HERO
+     HEADER / HERO (HOME ONLY)
   ========================= */
   const header = document.querySelector('.top-nav');
-  const heroText = document.querySelector('.hero-text');
+  const heroText = document.querySelector('.home .hero-text');
   const video = document.querySelector('.home .hero-video');
 
   let videoStarted = false;
+
+  // Ensure hero text is visible on load
+  if (heroText) {
+    heroText.style.opacity = 1;
+    heroText.style.transform = 'translateY(0)';
+  }
 
   const startVideo = () => {
     if (!videoStarted && video) {
@@ -19,10 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
+    // Header solid background on scroll
     if (header) {
       header.classList.toggle('is-solid', scrollY > 80);
     }
 
+    // Hero text fade + drift (HOME PAGE ONLY)
     if (heroText) {
       heroText.style.opacity = Math.max(1 - scrollY / 400, 0);
       heroText.style.transform = `translateY(${scrollY * 0.12}px)`;
