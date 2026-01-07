@@ -240,15 +240,15 @@ body {
 }
 
 /* =========================
-   ABOUT LOGO — FIXED BOTTOM LEFT
+   ABOUT LOGO — EDITORIAL MARK
 ========================= */
 .about-logo {
   position: fixed;
-  bottom: 2rem;
-  left: 2rem;
+  bottom: 2.5rem;
+  left: 2.5rem;
 
-  width: 140px;
-  opacity: 0.85;
+  width: 180px;            /* BIGGER — like reference */
+  opacity: 0.9;
 
   z-index: 20;
   pointer-events: none;
@@ -260,6 +260,9 @@ body {
   width: 100%;
   height: auto;
   display: block;
+
+  /* ✨ OPTIONAL EDITORIAL POLISH */
+  mix-blend-mode: screen;
 }
 
 /* =========================
@@ -309,9 +312,10 @@ body {
 ========================= */
 @media (max-width: 600px) {
   .about-logo {
-    width: 100px;
-    bottom: 1.25rem;
-    left: 1.25rem;
+    width: 120px;
+    bottom: 1.5rem;
+    left: 1.5rem;
   }
 }
+
 
