@@ -83,12 +83,19 @@ body {
 }
 
 /* =========================
-   HERO (OTHER PAGES)
+   HERO
 ========================= */
 .hero {
   position: relative;
   height: calc(100vh - var(--header-height));
   overflow: hidden;
+}
+
+/* VIDEO LAYER */
+.video-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .hero-video {
@@ -97,24 +104,22 @@ body {
   object-fit: cover;
 }
 
-
+/* OVERLAY LAYER */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.35);
+  z-index: 2;
 }
 
+/* TEXT LAYER */
 .hero-text {
   position: absolute;
   bottom: 20%;
   left: 6%;
   max-width: 480px;
-
-  z-index: 5;              /* stays above overlay/video */
-  opacity: 1;              /* no fading */
-  transform: none;         /* no motion */
+  z-index: 3;
 }
-
 
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
@@ -128,7 +133,7 @@ body {
 }
 
 /* =========================
-   FEATURED (RESTORED)
+   FEATURED
 ========================= */
 .featured {
   display: grid;
@@ -207,7 +212,7 @@ body {
   mix-blend-mode: screen;
 }
 
-/* TEXT */
+/* ABOUT TEXT */
 .about-text {
   max-width: 520px;
   z-index: 5;
@@ -236,7 +241,7 @@ body {
 }
 
 /* =========================
-   KIT SECTION (SCROLL)
+   KIT SECTION
 ========================= */
 .about-kit-section {
   min-height: 100vh;
@@ -276,7 +281,7 @@ body {
 }
 
 /* =========================
-   REVEAL
+   REVEAL (ABOUT / KIT ONLY)
 ========================= */
 .reveal {
   opacity: 0;
@@ -303,5 +308,4 @@ body {
     font-size: 1.4rem;
   }
 }
-
 
