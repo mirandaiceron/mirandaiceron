@@ -1,20 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* =========================
+/* =========================
    HEADER / HERO (HOME ONLY)
 ========================= */
 const header = document.querySelector('.top-nav');
-const heroText = document.querySelector('.home .hero-text');
 const video = document.querySelector('.home .hero-video');
 
 let videoStarted = false;
-let hasScrolled = false;
-
-// Force visible on load
-if (heroText) {
-  heroText.style.opacity = 1;
-  heroText.style.transform = 'translateY(0)';
-}
 
 const startVideo = () => {
   if (!videoStarted && video) {
@@ -24,20 +16,8 @@ const startVideo = () => {
 };
 
 window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-
-  if (!hasScrolled) {
-    hasScrolled = true;
-    return;
-  }
-
   if (header) {
-    header.classList.toggle('is-solid', scrollY > 80);
-  }
-
-  if (heroText) {
-    heroText.style.opacity = Math.max(1 - scrollY / 600, 0.2);
-    heroText.style.transform = `translateY(${scrollY * 0.12}px)`;
+    header.classList.toggle('is-solid', window.scrollY > 80);
   }
 
   startVideo();
