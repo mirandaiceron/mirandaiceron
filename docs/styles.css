@@ -97,6 +97,7 @@ body {
   object-fit: cover;
 }
 
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -108,10 +109,12 @@ body {
   bottom: 20%;
   left: 6%;
   max-width: 480px;
-  z-index: 5;
-  opacity: 1 !important;
-  transform: none !important;
+
+  z-index: 5;              /* stays above overlay/video */
+  opacity: 1;              /* no fading */
+  transform: none;         /* no motion */
 }
+
 
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
@@ -230,31 +233,6 @@ body {
   color: rgba(255,255,255,0.8);
   max-width: 420px;
   margin: 0 auto;
-}
-
-/* =========================
-   SCROLL CUE
-========================= */
-.scroll-cue {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.4;
-}
-
-.scroll-cue span {
-  display: block;
-  width: 1px;
-  height: 40px;
-  background: rgba(255,255,255,0.6);
-  animation: scrollFade 2.5s ease-in-out infinite;
-}
-
-@keyframes scrollFade {
-  0%   { opacity: 0; transform: translateY(-6px); }
-  50%  { opacity: 1; }
-  100% { opacity: 0; transform: translateY(6px); }
 }
 
 /* =========================
