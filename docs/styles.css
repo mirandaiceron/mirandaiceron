@@ -245,7 +245,7 @@ body {
 .about-logo {
   position: fixed;
   bottom: -40px;               /* TOUCHES PAGE EDGE */
-  left: 2.5rem;
+  left: 0;
 
   width: 520px;            /* LARGE — editorial scale */
   opacity: 0.95;
