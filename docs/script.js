@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ========================= */
   const header = document.querySelector('.top-nav');
   const heroText = document.querySelector('.hero-text');
-  const video = document.querySelector('.hero-video');
+  const video = document.querySelector('.home .hero-video');
 
   let videoStarted = false;
 
