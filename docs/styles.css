@@ -247,7 +247,7 @@ body {
   bottom: 2rem;
   left: 2rem;
 
-  width: 120px;
+  width: 140px;
   opacity: 0.85;
 
   z-index: 20;
@@ -263,20 +263,7 @@ body {
 }
 
 /* =========================
-   PORTRAIT
-========================= */
-.about-portrait {
-  width: 260px;
-  margin: 0 auto 3rem;
-}
-
-.about-portrait img {
-  width: 100%;
-  display: block;
-}
-
-/* =========================
-   TEXT
+   ABOUT TEXT
 ========================= */
 .about-text h1 {
   font-family: 'Playfair Display', serif;
@@ -321,12 +308,8 @@ body {
    MOBILE ABOUT
 ========================= */
 @media (max-width: 600px) {
-  .about-portrait {
-    width: 200px;
-  }
-
   .about-logo {
-    width: 90px;
+    width: 100px;
     bottom: 1.25rem;
     left: 1.25rem;
   }
