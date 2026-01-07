@@ -34,8 +34,8 @@ body {
 }
 
 .top-nav.is-solid {
-  background: rgba(0, 0, 0, 0.95);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: rgba(0,0,0,0.95);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .top-nav a,
@@ -61,13 +61,8 @@ body {
   gap: 1.5rem;
 }
 
-.nav-left {
-  justify-self: start;
-}
-
-.nav-right {
-  justify-self: end;
-}
+.nav-left { justify-self: start; }
+.nav-right { justify-self: end; }
 
 .nav-left a,
 .nav-right a {
@@ -85,7 +80,6 @@ body {
   display: block;
   font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
 }
 
 /* =========================
@@ -97,11 +91,6 @@ body {
   overflow: hidden;
 }
 
-.video-wrapper {
-  position: absolute;
-  inset: 0;
-}
-
 .hero-video {
   width: 100%;
   height: 100%;
@@ -111,7 +100,7 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0,0,0,0.35);
 }
 
 .hero-text {
@@ -133,7 +122,58 @@ body {
 }
 
 /* =========================
-   ABOUT — HERO SECTION
+   FEATURED (RESTORED)
+========================= */
+.featured {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  padding: 5rem 3rem;
+}
+
+.featured-left h2 {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.featured-left h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.featured-left p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.featured-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card .thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  background: #222;
+}
+
+.card h4 {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.card p {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* =========================
+   ABOUT — HERO
 ========================= */
 .about-hero {
   min-height: 100vh;
@@ -144,22 +184,19 @@ body {
   text-align: center;
 }
 
-/* LOGO — EDITORIAL MARK */
+/* LOGO */
 .about-logo {
   position: fixed;
-  bottom: -40px;
-  left: -80px;
-
+  bottom: -80px;
+  left: -60px;
   width: 520px;
   opacity: 0.95;
-
   z-index: 10;
   pointer-events: none;
 }
 
 .about-logo img {
   width: 100%;
-  height: auto;
   display: block;
   mix-blend-mode: screen;
 }
@@ -172,8 +209,8 @@ body {
 
 .about-text h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.7rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
 }
 
 .about-tagline {
@@ -185,15 +222,40 @@ body {
 }
 
 .about-bio {
-  font-size: 0.9rem;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.8);
   max-width: 420px;
   margin: 0 auto;
 }
 
 /* =========================
-   ABOUT — KIT (SCROLL REQUIRED)
+   SCROLL CUE
+========================= */
+.scroll-cue {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+}
+
+.scroll-cue span {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.6);
+  animation: scrollFade 2.5s ease-in-out infinite;
+}
+
+@keyframes scrollFade {
+  0%   { opacity: 0; transform: translateY(-6px); }
+  50%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(6px); }
+}
+
+/* =========================
+   KIT SECTION (SCROLL)
 ========================= */
 .about-kit-section {
   min-height: 100vh;
@@ -207,37 +269,33 @@ body {
 }
 
 .about-kit h2 {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  margin-bottom: 2rem;
-  color: rgba(255,255,255,0.6);
+  margin-bottom: 2.5rem;
+  color: rgba(255,255,255,0.5);
 }
 
-/* REMOVE BULLETS */
 .about-kit ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .about-kit li {
-  font-size: 0.9rem;
-  line-height: 2;
-  color: rgba(255,255,255,0.85);
+  font-size: 0.88rem;
+  line-height: 2.1;
+  color: rgba(255,255,255,0.8);
 }
 
-/* LABEL / VALUE BALANCE */
 .about-kit li span {
   display: inline-block;
   width: 90px;
   text-align: right;
   margin-right: 0.75rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.45);
 }
 
 /* =========================
-   REVEAL ANIMATION
+   REVEAL
 ========================= */
 .reveal {
   opacity: 0;
@@ -264,4 +322,5 @@ body {
     font-size: 1.4rem;
   }
 }
+
 
