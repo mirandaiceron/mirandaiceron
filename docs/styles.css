@@ -240,15 +240,15 @@ body {
 }
 
 /* =========================
-   ABOUT LOGO — EDITORIAL MARK
+   ABOUT LOGO — BOOK-COVER SCALE
 ========================= */
 .about-logo {
   position: fixed;
-  bottom: 2.5rem;
+  bottom: 0;               /* TOUCHES PAGE EDGE */
   left: 2.5rem;
 
-  width: 180px;            /* BIGGER — like reference */
-  opacity: 0.9;
+  width: 320px;            /* LARGE — editorial scale */
+  opacity: 0.95;
 
   z-index: 20;
   pointer-events: none;
@@ -261,7 +261,7 @@ body {
   height: auto;
   display: block;
 
-  /* ✨ OPTIONAL EDITORIAL POLISH */
+  /* ✨ PRINTED / INK POLISH */
   mix-blend-mode: screen;
 }
 
@@ -312,10 +312,10 @@ body {
 ========================= */
 @media (max-width: 600px) {
   .about-logo {
-    width: 120px;
-    bottom: 1.5rem;
+    width: 200px;
     left: 1.5rem;
   }
 }
+
 
 
