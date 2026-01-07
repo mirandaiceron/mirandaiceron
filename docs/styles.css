@@ -108,6 +108,9 @@ body {
   bottom: 20%;
   left: 6%;
   max-width: 480px;
+  z-index: 5;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .hero-text h1 {
