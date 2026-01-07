@@ -38,7 +38,7 @@ body {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Force ALL nav links white (fixes purple issue) */
+/* Force ALL nav links white */
 .top-nav a,
 .top-nav a:visited,
 .top-nav a:hover,
@@ -81,7 +81,6 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-/* Name */
 .name-top,
 .name-bottom {
   display: block;
@@ -167,7 +166,6 @@ body {
   gap: 2rem;
 }
 
-/* CARD */
 .card {
   display: block;
 }
@@ -192,15 +190,13 @@ body {
 }
 
 /* =========================
-   MOBILE
+   MOBILE NAV
 ========================= */
 @media (max-width: 768px) {
   :root {
     --header-height: 140px;
   }
-}
 
-@media (max-width: 768px) {
   .nav-inner {
     display: flex;
     flex-direction: column;
@@ -228,7 +224,7 @@ body {
 }
 
 /* =========================
-   ABOUT — SCROLL REVEAL
+   ABOUT
 ========================= */
 .about {
   min-height: 100vh;
@@ -243,14 +239,32 @@ body {
   text-align: center;
 }
 
-/* Logo */
-.about-logo img {
+/* =========================
+   ABOUT LOGO — FIXED BOTTOM LEFT
+========================= */
+.about-logo {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+
   width: 120px;
-  margin-bottom: 3rem;
   opacity: 0.85;
+
+  z-index: 20;
+  pointer-events: none;
+
+  transform: none !important;
 }
 
-/* Portrait */
+.about-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   PORTRAIT
+========================= */
 .about-portrait {
   width: 260px;
   margin: 0 auto 3rem;
@@ -261,7 +275,9 @@ body {
   display: block;
 }
 
-/* Text */
+/* =========================
+   TEXT
+========================= */
 .about-text h1 {
   font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
@@ -282,7 +298,9 @@ body {
   color: rgba(255,255,255,0.85);
 }
 
-/* Reveal animation */
+/* =========================
+   REVEAL ANIMATION
+========================= */
 .reveal {
   opacity: 0;
   transform: translateY(32px);
@@ -294,9 +312,23 @@ body {
   transform: translateY(0);
 }
 
-/* Mobile */
+/* Prevent reveal transform on fixed logo */
+.about-logo.reveal {
+  transform: none;
+}
+
+/* =========================
+   MOBILE ABOUT
+========================= */
 @media (max-width: 600px) {
   .about-portrait {
     width: 200px;
   }
+
+  .about-logo {
+    width: 90px;
+    bottom: 1.25rem;
+    left: 1.25rem;
+  }
 }
+
