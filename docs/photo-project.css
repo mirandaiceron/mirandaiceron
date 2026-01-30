@@ -161,4 +161,28 @@ body {
   }
 }
 
+/* =========================
+   LIGHTBOX ANIMATION
+========================= */
+.lightbox {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+}
+
+.lightbox-inner img {
+  transform: scale(0.96);
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.lightbox.is-open .lightbox-inner img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
 
