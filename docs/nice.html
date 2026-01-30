@@ -11,7 +11,26 @@
 
 <body>
 
-<header class="top-nav">…</header>
+<header class="top-nav">
+  <nav class="nav-inner">
+    <div class="nav-left">
+      <a href="film.html">FILM PROJECTS</a>
+      <a href="photography.html">PHOTOGRAPHY</a>
+    </div>
+
+    <div class="nav-center">
+      <a href="index.html" class="nav-home">
+        <span class="name-top">Miranda</span>
+        <span class="name-bottom">Isabella Ceron</span>
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+  </nav>
+</header>
 
 <main class="photo-project">
   <h1 class="project-title">Nice</h1>
@@ -25,14 +44,17 @@
 <!-- LIGHTBOX -->
 <div class="lightbox">
   <button type="button" class="lightbox-arrow left">&#10094;</button>
+
   <div class="lightbox-inner">
     <img id="photo-lightbox-img" src="" alt="">
     <div id="lightbox-caption"></div>
   </div>
+
   <button type="button" class="lightbox-arrow right">&#10095;</button>
 </div>
 
 <script src="./script.js"></script>
 </body>
 </html>
+
 
