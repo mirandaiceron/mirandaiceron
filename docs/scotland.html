@@ -5,54 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scotland — Photography</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="photo-project.css">
 </head>
 
 <body>
 
-<header class="top-nav">
-  <nav class="nav-inner">
-    <div class="nav-left">
-      <a href="film.html">FILM PROJECTS</a>
-      <a href="photography.html">PHOTOGRAPHY</a>
-    </div>
-
-    <div class="nav-center">
-      <a href="index.html" class="nav-home">
-        <span class="name-top">Miranda</span>
-        <span class="name-bottom">Isabella Ceron</span>
-      </a>
-    </div>
-
-    <div class="nav-right">
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </div>
-  </nav>
-</header>
+<header class="top-nav">…</header>
 
 <main class="photo-project">
-
   <h1 class="project-title">Scotland</h1>
 
   <section class="contact-sheet">
-
-    <img src="./assets/Photography/scotland/scotland-01.jpg" alt="">
-    <img src="./assets/Photography/scotland/scotland-02.jpg" alt="">
-    <img src="./assets/Photography/scotland/scotland-03.jpg" alt="">
-    <img src="./assets/Photography/scotland/scotland-04.jpg" alt="">
-    <img src="./assets/Photography/scotland/scotland-05.jpg" alt="">
-    <img src="./assets/Photography/scotland/scotland-06.jpg" alt="">
-    <img src="./assets/Photography/scotland/scotland-07.jpg" alt="">
-
+    <img src="./assets/Photography/scotland/scotland-01.jpg" alt="Scotland, 2022">
+    <img src="./assets/Photography/scotland/scotland-02.jpg" alt="Scotland, 2022">
+    <img src="./assets/Photography/scotland/scotland-03.jpg" alt="Scotland, 2022">
+    <img src="./assets/Photography/scotland/scotland-04.jpg" alt="Scotland, 2022">
+    <img src="./assets/Photography/scotland/scotland-05.jpg" alt="Scotland, 2022">
+    <img src="./assets/Photography/scotland/scotland-06.jpg" alt="Scotland, 2022">
+    <img src="./assets/Photography/scotland/scotland-07.jpg" alt="Scotland, 2022">
   </section>
-
 </main>
 
+<!-- LIGHTBOX -->
+<div class="lightbox">
+  <button type="button" class="lightbox-arrow left">&#10094;</button>
+  <div class="lightbox-inner">
+    <img id="photo-lightbox-img" src="" alt="">
+    <div id="lightbox-caption"></div>
+  </div>
+  <button type="button" class="lightbox-arrow right">&#10095;</button>
+</div>
+
+<script src="./script.js"></script>
 </body>
 </html>
+
