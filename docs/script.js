@@ -26,82 +26,86 @@ window.addEventListener('scroll', () => {
 window.addEventListener('click', startVideo, { once: true });
 
 
-  /* =========================
-     FILM PAGE — HOVER AUTO-DRIFT
-  ========================= */
-  document.querySelectorAll('.film-row').forEach(row => {
-    const strip = row.querySelector('.film-stills');
-    if (!strip) return;
+/* =========================
+   FILM PAGE — HOVER AUTO-DRIFT
+========================= */
+document.querySelectorAll('.film-row').forEach(row => {
+  const strip = row.querySelector('.film-stills');
+  if (!strip) return;
 
-    let rafId;
-    let hovering = false;
+  let rafId;
+  let hovering = false;
 
-    const drift = () => {
-      if (!hovering) return;
+  const drift = () => {
+    if (!hovering) return;
 
-      strip.scrollLeft += 1;
+    strip.scrollLeft += 1;
 
-      if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth) {
-        strip.scrollLeft = 0;
-      }
+    if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth) {
+      strip.scrollLeft = 0;
+    }
 
-      rafId = requestAnimationFrame(drift);
-    };
+    rafId = requestAnimationFrame(drift);
+  };
 
-    row.addEventListener('mouseenter', () => {
-      hovering = true;
-      rafId = requestAnimationFrame(drift);
-    });
-
-    row.addEventListener('mouseleave', () => {
-      hovering = false;
-      cancelAnimationFrame(rafId);
-    });
+  row.addEventListener('mouseenter', () => {
+    hovering = true;
+    rafId = requestAnimationFrame(drift);
   });
 
-  /* =========================
-     PHOTOGRAPHY — LIGHTBOX
-  ========================= */
-  const lightbox = document.querySelector('.lightbox');
-  const lightboxImg = document.querySelector('.lightbox img');
-  const lightboxCaption = document.querySelector('.lightbox .caption');
+  row.addEventListener('mouseleave', () => {
+    hovering = false;
+    cancelAnimationFrame(rafId);
+  });
+});
 
-  document.querySelectorAll('.photo-grid img').forEach(img => {
+
+/* =========================
+   PHOTOGRAPHY — LIGHTBOX
+   (CONTACT SHEET ONLY)
+========================= */
+const contactSheet = document.querySelector('.contact-sheet');
+
+if (contactSheet) {
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  contactSheet.querySelectorAll('img').forEach(img => {
     img.addEventListener('click', () => {
       if (!lightbox || !lightboxImg) return;
 
-      lightbox.classList.add('is-visible');
+      lightbox.classList.add('is-open');
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
-
-      if (lightboxCaption) {
-        lightboxCaption.textContent = img.dataset.caption || '';
-      }
+      lightboxCaption.textContent = img.alt || '';
     });
   });
 
-  if (lightbox) {
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('is-visible');
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('is-open');
+    }
+  });
+}
+
+
+/* =========================
+   ABOUT — SCROLL REVEAL
+========================= */
+const revealItems = document.querySelectorAll('.reveal');
+
+if (revealItems.length) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
     });
-  }
+  }, { threshold: 0.2 });
 
-  /* =========================
-     ABOUT — SCROLL REVEAL
-  ========================= */
-  const revealItems = document.querySelectorAll('.reveal');
-
-  if (revealItems.length) {
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    revealItems.forEach(item => revealObserver.observe(item));
-  }
+  revealItems.forEach(item => revealObserver.observe(item));
+}
 
 });
 
