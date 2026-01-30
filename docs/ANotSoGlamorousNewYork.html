@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Not So Glamorous New York City</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="main.css"/>
+    <style>
+        video{
+            /*
+            Very little can be styled on the video controls.
+            You are better off creating your other own controls
+            using HTML and CSS. Then remove the controls attribute from the <video> element and add some Javascript to control the video playback.
+            */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Video Element</h1>
+    </header>
+    <main>    
+        <video  muted loop controls crossorigin="anonymous" poster="archer-bob.jpg">
+            <source src="./video/lion-sample.webm" type="video/webm"/>
+            <source src="./video/lion-sample.ogv" type="video/ogg"/>
+            <source src="./video/lion-sample.mp4" type="video/mp4"/>
+            <source src="./video/lion-sample.3gp" type="video/3gp"/>
+            <p><a href="" download>Download the Video</a></p>
+        </video>
+    </main>
+</body>
+</html>
+ @mirandaiceron
+Comment
 
