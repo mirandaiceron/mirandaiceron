@@ -37,8 +37,8 @@ document.querySelectorAll('.film-row').forEach(row => {
 
   const drift = () => {
     if (!hovering) return;
-    strip.scrollLeft += 1;
 
+    strip.scrollLeft += 1;
     if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth) {
       strip.scrollLeft = 0;
     }
@@ -94,8 +94,14 @@ if (contactSheet) {
 
   function updateLightbox() {
     const img = images[currentIndex];
+
+    lightboxImg.classList.remove('is-animating');
+    void lightboxImg.offsetWidth; // force reflow
+
     lightboxImg.src = img.src;
     lightboxCaption.textContent = img.alt || '';
+
+    lightboxImg.classList.add('is-animating');
   }
 
   nextBtn.addEventListener('click', e => {
