@@ -68,22 +68,58 @@ if (contactSheet) {
   const lightbox = document.querySelector('.lightbox');
   const lightboxImg = document.getElementById('photo-lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
+  const nextBtn = document.querySelector('.lightbox-arrow.right');
+  const prevBtn = document.querySelector('.lightbox-arrow.left');
 
-  contactSheet.querySelectorAll('img').forEach(img => {
+  const images = Array.from(contactSheet.querySelectorAll('img'));
+  let currentIndex = 0;
+
+  images.forEach((img, index) => {
     img.addEventListener('click', () => {
-      if (!lightbox || !lightboxImg) return;
-
-      lightbox.classList.add('is-open');
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightboxCaption.textContent = img.alt || '';
+      currentIndex = index;
+      openLightbox();
     });
   });
 
+  function openLightbox() {
+    updateLightbox();
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    const img = images[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent = img.alt || '';
+  }
+
+  nextBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+  });
+
+  prevBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+  });
+
   lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) {
-      lightbox.classList.remove('is-open');
-    }
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('is-open')) return;
+
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextBtn.click();
+    if (e.key === 'ArrowLeft') prevBtn.click();
   });
 }
 
