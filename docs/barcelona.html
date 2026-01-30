@@ -5,75 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Barcelona — Photography</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="photo-project.css">
 </head>
 
 <body>
 
-<header class="top-nav">
-  <nav class="nav-inner">
-    <div class="nav-left">
-      <a href="film.html">FILM PROJECTS</a>
-      <a href="photography.html">PHOTOGRAPHY</a>
-    </div>
-
-    <div class="nav-center">
-      <a href="index.html" class="nav-home">
-        <span class="name-top">Miranda</span>
-        <span class="name-bottom">Isabella Ceron</span>
-      </a>
-    </div>
-
-    <div class="nav-right">
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </div>
-  </nav>
-</header>
+<header class="top-nav">…</header>
 
 <main class="photo-project">
-
   <h1 class="project-title">Barcelona</h1>
 
   <section class="contact-sheet">
-
-  <img
-    src="./assets/Photography/barcelona/barcelona-01.JPG"
-    alt=""
-    data-caption="Barcelona, 2025"
-  >
-
-  <img
-    src="./assets/Photography/barcelona/barcelona-02.jpg"
-    alt=""
-    data-caption="La Sagrada Familia, 2025"
-  >
-
-</section>
-
-
+    <img src="./assets/Photography/barcelona/barcelona-01.JPG" alt="Barcelona, 2025">
+    <img src="./assets/Photography/barcelona/barcelona-02.jpg" alt="La Sagrada Familia, 2025">
+  </section>
 </main>
-  
-    <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-arrow left" aria-label="Previous image">&#10094;</button>
 
+<!-- LIGHTBOX -->
+<div class="lightbox">
+  <button type="button" class="lightbox-arrow left">&#10094;</button>
   <div class="lightbox-inner">
-    <img id="lightbox-img" src="" alt="">
-    <p id="lightbox-caption"></p>
+    <img id="photo-lightbox-img" src="" alt="">
+    <div id="lightbox-caption"></div>
   </div>
-
-  <button class="lightbox-arrow right" aria-label="Next image">&#10095;</button>
+  <button type="button" class="lightbox-arrow right">&#10095;</button>
 </div>
 
-
-<script src="script.js"></script>
-
-
+<script src="./script.js"></script>
 </body>
 </html>
+
