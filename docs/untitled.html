@@ -5,63 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Untitled — Photography</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="photo-project.css">
 </head>
 
 <body>
 
-<header class="top-nav">
-  <nav class="nav-inner">
-    <div class="nav-left">
-      <a href="film.html">FILM PROJECTS</a>
-      <a href="photography.html">PHOTOGRAPHY</a>
-    </div>
-
-    <div class="nav-center">
-      <a href="index.html" class="nav-home">
-        <span class="name-top">Miranda</span>
-        <span class="name-bottom">Isabella Ceron</span>
-      </a>
-    </div>
-
-    <div class="nav-right">
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </div>
-  </nav>
-</header>
+<header class="top-nav">…</header>
 
 <main class="photo-project">
-
   <h1 class="project-title">Untitled</h1>
 
   <section class="contact-sheet">
-
-    <img src="./assets/Photography/untitled/untitled-01.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-02.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-03.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-04.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-05.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-06.JPG" alt="">
-    <img src="./assets/Photography/untitled/untitled-07.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-08.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-09.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-10.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-11.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-12.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-13.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-14.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-15.jpg" alt="">
-    <img src="./assets/Photography/untitled/untitled-16.jpg" alt="">
-
+    <img src="./assets/Photography/untitled/untitled-01.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-02.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-03.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-04.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-05.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-06.JPG" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-07.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-08.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-09.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-10.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-11.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-12.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-13.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-14.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-15.jpg" alt="Untitled">
+    <img src="./assets/Photography/untitled/untitled-16.jpg" alt="Untitled">
   </section>
-
 </main>
 
+<!-- LIGHTBOX -->
+<div class="lightbox">
+  <button type="button" class="lightbox-arrow left">&#10094;</button>
+  <div class="lightbox-inner">
+    <img id="photo-lightbox-img" src="" alt="">
+    <div id="lightbox-caption"></div>
+  </div>
+  <button type="button" class="lightbox-arrow right">&#10095;</button>
+</div>
+
+<script src="./script.js"></script>
 </body>
 </html>
+
