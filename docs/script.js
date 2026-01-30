@@ -19,7 +19,6 @@ window.addEventListener('scroll', () => {
   if (header) {
     header.classList.toggle('is-solid', window.scrollY > 80);
   }
-
   startVideo();
 });
 
@@ -38,7 +37,6 @@ document.querySelectorAll('.film-row').forEach(row => {
 
   const drift = () => {
     if (!hovering) return;
-
     strip.scrollLeft += 1;
 
     if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth) {
@@ -62,13 +60,13 @@ document.querySelectorAll('.film-row').forEach(row => {
 
 /* =========================
    PHOTOGRAPHY — LIGHTBOX
-   (CONTACT SHEET ONLY)
+   (PROJECT PAGES ONLY)
 ========================= */
 const contactSheet = document.querySelector('.contact-sheet');
 
 if (contactSheet) {
   const lightbox = document.querySelector('.lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxImg = document.getElementById('photo-lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
 
   contactSheet.querySelectorAll('img').forEach(img => {
