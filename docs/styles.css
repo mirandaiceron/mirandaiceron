@@ -240,6 +240,16 @@ body {
   margin: 0 auto;
 }
 
+/* CONTACT EMAIL LINK */
+.about-bio a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.about-bio a:hover {
+  text-decoration: underline;
+}
+
 /* =========================
    KIT SECTION
 ========================= */
