@@ -312,6 +312,27 @@ body {
 }
 
 /* =========================
+   FILM PROJECT PAGES
+========================= */
+.film-page {
+  padding: 6rem 3rem 4rem;
+}
+
+.film-player {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.film-player video {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  background: #000;
+}
+
+
+/* =========================
    MOBILE
 ========================= */
 @media (max-width: 600px) {
