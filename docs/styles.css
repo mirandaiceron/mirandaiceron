@@ -312,7 +312,7 @@ body {
 }
 
 /* =========================
-   FILM PROJECT PAGES
+   FILM PROJECT — EDITORIAL LAYOUT
 ========================= */
 .film-page {
   padding: 6rem 3rem 4rem;
@@ -321,15 +321,34 @@ body {
 .film-player {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
 }
 
 .film-player video {
   width: 100%;
-  max-width: 900px;
-  height: auto;
+  max-width: 720px; /* editorial scale */
   background: #000;
 }
+
+/* Title under video */
+.film-title {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Optional subtitle / meta */
+.film-meta {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
 
 
 /* =========================
