@@ -338,8 +338,10 @@ body {
   font-weight: 700;
 }
 
-/* Optional subtitle / meta */
-.film-meta {
+/* =========================
+   FILM PROJECT — EDITORIAL LAYOUT (SINGLE FILMS ONLY)
+========================= */
+.film-page .film-meta {
   margin-top: 0.75rem;
   text-align: center;
   font-family: 'Inter', sans-serif;
@@ -348,6 +350,7 @@ body {
   text-transform: uppercase;
   color: rgba(255,255,255,0.6);
 }
+
 
 
 
