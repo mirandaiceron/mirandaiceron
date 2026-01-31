@@ -249,6 +249,26 @@ body {
 }
 
 /* =========================
+   ABOUT KIT — RESTORE ORIGINAL ALIGNMENT
+========================= */
+.about-kit {
+  text-align: left;
+}
+
+.about-kit ul {
+  margin: 0 auto;
+  max-width: 420px;
+}
+
+.about-kit li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  text-align: left;
+}
+
+
+/* =========================
    REVEAL
 ========================= */
 .reveal {
