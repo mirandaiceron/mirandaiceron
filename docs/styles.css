@@ -186,35 +186,22 @@ body {
 /* =========================
    ABOUT — HERO
 ========================= */
+
 .about-hero {
   min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   position: relative;
   text-align: center;
+
+  overflow: hidden;
 }
 
-/* LOGO */
-.about-logo {
-  position: fixed;
-  bottom: -40px;
-  left: -80px;
-  width: 620px;
-  opacity: 0.95;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.about-logo img {
-  width: 100%;
-  display: block;
-  mix-blend-mode: screen;
-}
-
-/* ABOUT TEXT */
 .about-text {
-  max-width: 520px;
+  width: 100%;
   z-index: 5;
 }
 
@@ -232,11 +219,41 @@ body {
   margin-bottom: 2.5rem;
 }
 
+
+/* =========================
+   PHYSICAL PHOTO STRIP
+========================= */
+
+.about-photostrip {
+  width: min(900px, 85vw);
+
+  margin: 0 auto 2.75rem;
+
+  transform: rotate(-1.2deg);
+}
+
+.about-photostrip img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   BIO
+========================= */
+
 .about-bio {
   font-size: 0.95rem;
   line-height: 1.85;
+
   color: rgba(255,255,255,0.8);
+
   max-width: 420px;
+
   margin: 0 auto;
 }
 
